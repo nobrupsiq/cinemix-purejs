@@ -1,0 +1,13 @@
+@import './global/global.css';
+@import './home.css';
+@import './filmes.css';
+@import './combos.css';
+@import './secoes.css';
+
+:root {
+    --bg: #6639da;
+    --title: #61bafc;
+    --hover: #fda529;
+    --gb_btn: #fda529;
+    --menu_color: #fff;
+}
