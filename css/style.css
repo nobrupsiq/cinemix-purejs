@@ -1,8 +1,8 @@
 @import './global/global.css';
-@import './home.css';
-@import './filmes.css';
-@import './combos.css';
-@import './secoes.css';
+@import './home/home.css';
+@import './filmes/filmes.css';
+@import './combos/combos.css';
+@import './secoes/secoes.css';
 
 :root {
     --bg: #6639da;
