@@ -9,7 +9,9 @@ body {
 
 h1,
 ul,
-p {
+p,
+input,
+label {
     margin: 0px;
 }
 

@@ -1,0 +1,129 @@
+main {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.promotion_banner {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+    background-image: url('../../img/banner_clube.png');
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    height: 100vh;
+}
+
+.promotion_banner button {
+    background-color: var(--btn);
+    border: 2px solid transparent;
+    color: var(--f_color);
+    margin: 40px;
+    padding: 8px 20px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: hithere 1s ease infinite;
+}
+
+@keyframes hithere {
+    30% {
+        transform: scale(1.2);
+    }
+    40%,
+    60% {
+        transform: rotate(-2deg) scale(1.2);
+    }
+    50% {
+        transform: rotate(2deg) scale(1.2);
+    }
+    70% {
+        transform: rotate(0deg) scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.promotion_banner button:hover {
+    animation: none;
+    scale: 1.2;
+    border: 2px solid var(--f_color);
+}
+
+.title {
+    color: var(--f_color);
+}
+
+.newsletter {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.newsletter h2 {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.newsletter_form {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 40px 0;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background: url('../../img/track.png');
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.newsletter_form label {
+    display: block;
+    color: var(--f_color);
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+.newsletter_form input {
+    width: 280px;
+    padding: 8px 5px;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.newsletter_form input:focus {
+    box-shadow: 0px 0px 4px 2px var(--btn);
+}
+
+.newsletter_form .btn {
+    position: relative;
+    top: 14px;
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter_form .btn:hover,
+.newsletter_form .btn:focus {
+    border: 2px solid var(--f_color);
+}

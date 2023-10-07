@@ -18,10 +18,10 @@
             <nav class="menu">
                 <a href="./index.html"><img src="./img/logo-white.svg" alt="Logo"></a>
                 <ul class="menu_list">
-                    <li><a href="./index.html">Início</a></li>
-                    <li><a href="./screens/filmes.html">Filmes</a></li>
-                    <li><a href="./screens/combos.html">Combos</a></li>
-                    <li><a href="./screens/secoes.html">Seções</a></li>
+                    <li><a href="./index.html">início<span class="menu_ping">.</span> </a></li>
+                    <li><a href="./screens/filmes.html">Filmes<span class="menu_ping">.</span></a></li>
+                    <li><a href="./screens/combos.html">Combos<span class="menu_ping">.</span></a></li>
+                    <li><a href="./screens/secoes.html">Seções<span class="menu_ping">.</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <h2 class="title">EM BREVE...</h2>
+        <h2 class="title">Em breve...</h2>
 
         <section class="cards">
             <ul class="list_cards">
@@ -43,16 +43,24 @@
         </section>
 
         <div class="promotion_banner">
+            <button>Clique e participe</button>
             <!--Banner no CSS para o botão ficar por cima-->
         </div>
 
         <section class="newsletter">
-            <h2>RECEBA NOVIDADES</h2>
-            <label for="name">NOME</label>
-            <input type="text" id="name">
+            <h2 class="title">Receba novidades<span class="menu_ping">.</span></h2>
+            <form class="newsletter_form">
+                <div>
+                    <label for="name">Nome</label>
+                    <input type="text" id="name">
+                </div>
 
-            <label for="email">E-MAIL</label>
-            <input type="text" id="email">
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email">
+                </div>
+                <button class="btn">Enviar</button>
+            </form>
         </section>
     </main>
 

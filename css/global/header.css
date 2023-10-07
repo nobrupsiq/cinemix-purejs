@@ -4,7 +4,6 @@
 
 .bg_container_menu {
     background: var(--bg);
-    
 }
 
 .menu {
@@ -30,6 +29,12 @@
     letter-spacing: 1.5px;
     transition: 0.3s;
 }
+
+.menu_ping {
+    color: var(--hover);
+    font-weight: bold;
+}
+
 .menu ul a:hover {
     color: var(--hover);
 }
