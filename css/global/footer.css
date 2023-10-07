@@ -1,0 +1,31 @@
+.copy {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--bg);
+    color: var(--menu_color);
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.socials {
+    display: flex;
+}
+
+.socials a {
+    border-radius: 100%;
+    border: 2px solid transparent;
+    padding: 2px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    border: 2px solid var(--hover);
+    scale: 1.1;
+}
+
+.socials a + a {
+    margin-left: 10px;
+}

@@ -3,57 +3,20 @@ main {
     margin: 0 auto;
 }
 
+/* 
+ SLIDE PRINCIPAL
+*/
+
+/* 
+    SLIDE EM BREVE
+*/
+
 .promotion_banner {
+    max-width: 100%;
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
-    position: relative;
-    background-image: url('../../img/banner_clube.png');
-    background-position: center;
-    background-size: cover;
-    object-fit: cover;
-    height: 100vh;
-}
-
-.promotion_banner button {
-    background-color: var(--btn);
-    border: 2px solid transparent;
-    color: var(--f_color);
-    margin: 40px;
-    padding: 8px 20px;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
-    font-family: 'Poppins';
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-    animation: hithere 1s ease infinite;
-}
-
-@keyframes hithere {
-    30% {
-        transform: scale(1.2);
-    }
-    40%,
-    60% {
-        transform: rotate(-2deg) scale(1.2);
-    }
-    50% {
-        transform: rotate(2deg) scale(1.2);
-    }
-    70% {
-        transform: rotate(0deg) scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.promotion_banner button:hover {
-    animation: none;
-    scale: 1.2;
-    border: 2px solid var(--f_color);
+    text-align: center;
 }
 
 .title {
