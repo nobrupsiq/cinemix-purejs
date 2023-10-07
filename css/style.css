@@ -3,6 +3,7 @@
 @import './filmes/filmes.css';
 @import './combos/combos.css';
 @import './secoes/secoes.css';
+@import './slide/slide.css';
 
 :root {
     --bg: #6639da;
