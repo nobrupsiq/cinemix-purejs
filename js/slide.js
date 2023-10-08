@@ -1,17 +1,33 @@
-export default function slide() {
-    let count = 1;
-    document.getElementById('radio1').checked = true;
+export default class Slide {
+    constructor(slide, wrapper) {
+        this.slide = document.querySelector('.slide');
+        this.wrapper = document.querySelector('.slide_wrapper');
+    }
+    onStart(event) {
+        event.preventDefault();
+        this.wrapper.addEventListener('mousemove', this.onMove);
+    }
 
-    setInterval(() => {
-        nextImage();
-    }, 5000);
+    onMove(event) {}
 
-    function nextImage() {
-        count++;
-        if (count > 4) {
-            count = 1;
-        }
+    onEnd(event) {
+        this.wrapper.removeEventListener('mousemove', this.onMove);
+    }
 
-        document.getElementById(`radio${count}`).checked = true;
+    addSlideEvents() {
+        this.wrapper.addEventListener('mousedown', this.onStart);
+        this.wrapper.addEventListener('mouseup', this.onEnd);
+    }
+
+    bindEvents() {
+        this.onStart = this.onStart.bind(this);
+        this.onMove = this.onMove.bind(this);
+        this.onEnd = this.onEnd.bind(this);
+    }
+
+    init() {
+        this.bindEvents();
+        this.addSlideEvents();
+        return this;
     }
 }
