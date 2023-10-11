@@ -1,5 +1,6 @@
 .slide_wrapper {
     max-width: 1380px;
+    margin: 0 auto;
     overflow: hidden;
     padding: 40px 0;
 }
