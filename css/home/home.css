@@ -3,6 +3,16 @@ main {
     margin: 0 auto;
 }
 
+.cards_time {
+    text-align: center;
+    padding: 40px;
+    background: var(--f_color);
+}
+
+.cards_time h2 {
+    color: var(--menu_color);
+}
+
 /* 
  SLIDE PRINCIPAL
 */
@@ -88,4 +98,53 @@ main {
 .newsletter_form .btn:hover,
 .newsletter_form .btn:focus {
     border: 2px solid var(--f_color);
+}
+
+.cards {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.list_cards {
+    display: flex;
+    gap: 40px;
+    padding: 40px 20px 80px 20px;
+    position: relative;
+}
+
+.list_cards li {
+    overflow: hidden;
+    box-shadow: 2px 2px 5px 1px rgba(241, 242, 246, 0.2);
+    transition: 0.5s;
+}
+
+.list_cards li:hover {
+    scale: 1.1;
+    transform: perspective(900px) translateY(-5%) rotateX(25deg);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+.list_cards li img {
+    max-height: 480px;
+    min-height: 240px;
+    object-fit: cover;
+}
+
+.caracter {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.list_cards li:hover .caracter {
+    opacity: 1;
+    z-index: 2;
+    transform: translate3d(0%, -90%, 100px);
+    filter: drop-shadow(10px 10px 1px #000);
+}
+
+.list_cards li:hover .card_b {
+    filter: brightness(0.7);
 }
