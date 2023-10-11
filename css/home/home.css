@@ -98,6 +98,8 @@ main {
 .newsletter_form .btn:hover,
 .newsletter_form .btn:focus {
     border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
 }
 
 .cards {
