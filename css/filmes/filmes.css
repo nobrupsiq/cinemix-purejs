@@ -1,8 +1,11 @@
 .main {
     max-width: 1380px;
     margin: 0 auto;
-    text-align: center;
     padding: 40px 0;
+}
+
+.main h1 {
+    text-align: center;
 }
 
 .list_btn {
@@ -32,4 +35,25 @@
     border: 2px solid var(--f_color);
     scale: 1.1;
     box-shadow: 5px 5px 1px var(--f_color);
+}
+
+/* cards */
+
+.cards_filmes {
+    max-width: 1380px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 20px;
+    padding: 80px;
+}
+
+.card_container {
+    border: 2px solid var(--f_color);
+}
+
+.card_container {
+    width: 80%;
+    height: max-content;
+    min-width: 240px;
 }
