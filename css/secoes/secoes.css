@@ -1,0 +1,25 @@
+th,
+td {
+    border: 1px solid #ccc;
+    font-size: 22px;
+    padding: 6px 6px;
+    text-align: center;
+}
+
+.table_container {
+    max-width: 1380px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 120px;
+    border-collapse: collapse;
+}
+
+.table_body td {
+    text-align: left;
+    width: 20%;
+}
+
+.table_body tr:nth-child(odd) {
+    background: rgba(156, 136, 255, 0.2);
+}
