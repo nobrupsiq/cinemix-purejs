@@ -145,3 +145,74 @@ main {
 .list_cards li:hover .card_b {
     filter: brightness(0.7);
 }
+
+@media (max-width: 768px) {
+    .menu_container a img {
+        width: 140px;
+        margin-left: 20px;
+    }
+    .list_cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    .list_cards .caracter {
+        display: none;
+    }
+    .list_cards li:hover {
+        transform: none;
+        filter: none;
+    }
+    .list_cards li:hover .card_b {
+        filter: none;
+    }
+    .cards_time {
+        padding-top: 10px;
+    }
+    .cards_time h2 {
+        font-size: 18px;
+    }
+
+    .list_cards li img {
+        max-height: 220px;
+        min-height: 240px;
+        width: 180px;
+        object-fit: cover;
+    }
+    .newsletter_form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+    .newsletter h2 {
+        font-size: 18px;
+    }
+    .newsletter_form label {
+        font-size: 14px;
+    }
+    .newsletter_form input {
+        font-size: 14px;
+        padding: 6px 5px;
+    }
+    .newsletter_form .btn {
+        width: 80px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .newsletter h2 {
+        padding-top: 20px;
+    }
+    .copy_container .footer_logo {
+        width: 140px;
+        margin-left: 20px;
+    }
+    .copy_container .socials {
+        margin-right: 10px;
+    }
+    .copy_container p {
+        font-size: 12px;
+        text-align: center;
+    }
+}
