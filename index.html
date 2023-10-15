@@ -14,17 +14,23 @@
 
 <body>
     <header class="header">
-        <div class="bg_container_menu">
-            <nav class="menu">
+        <section class="bg_container_menu">
+            <div class="menu_container">
                 <a href="./index.html"><img src="./img/logo-white.svg" alt="Logo"></a>
-                <ul class="menu_list">
-                    <li><a href="./index.html">início<span class="menu_ping">.</span> </a></li>
-                    <li><a href="./screens/filmes.html">Filmes<span class="menu_ping">.</span></a></li>
-                    <li><a href="./screens/combos.html">Combos<span class="menu_ping">.</span></a></li>
-                    <li><a href="./screens/secoes.html">Programação<span class="menu_ping">.</span></a></li>
-                </ul>
-            </nav>
-        </div>
+
+                <nav class="nav">
+                    <button aria-label="Abrir menu" id="btn_mobile" aria-haspopup="true" aria-expanded="false" aria-controls="menu_list">
+                        <span id="hamburguer"></span>
+                    </button>
+                    <ul class="menu_list" role="menu">
+                        <li><a href="./index.html">início<span class="menu_ping">.</span> </a></li>
+                        <li><a href="./screens/filmes.html">Filmes<span class="menu_ping">.</span></a></li>
+                        <li><a href="./screens/combos.html">Combos<span class="menu_ping">.</span></a></li>
+                        <li><a href="./screens/secoes.html">Programação<span class="menu_ping">.</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
 
         <!--Banner Slider-->
         <div class="slide_wrapper">
@@ -48,16 +54,24 @@
             <section class="cards">
                 <ul class="list_cards">
                     <li><img class="card_b" src="https://img.elo7.com.br/product/original/23646C7/big-poster-filme-capita-marvel-tamanho-90x60-cm-presente-geek.jpg" alt="">
-                        <img class="caracter" src="./img/cpt_marvel.png" alt="">
+                        <div class="caracter">
+                            <img src="./img/cpt_marvel.png" alt="">
+                        </div>
                     </li>
                     <li><img class="card_b" src="https://i0.wp.com/ofelm.com.br/wp-content/uploads/2017/07/1-VwWu7sEnEeJ1HQqMTj5AHA.jpeg?resize=1280%2C1896" alt="">
-                        <img class="caracter" src="./img/eleven.png" alt="">
+                        <div class="caracter">
+                            <img src="./img/eleven.png" alt="">
+                        </div>
                     </li>
                     <li><img class="card_b" src="https://thenationroar.com/wp-content/uploads/2020/04/deadpool-3.jpg" alt="">
-                        <img class="caracter" src="./img/deadpool.png" alt="">
+                        <div class="caracter">
+                            <img src="./img/deadpool.png" alt="">
+                        </div>
                     </li>
                     <li><img class="card_b" src="https://www.europanet.com.br/posteres-filmes-series/img/capas/107172.jpg" alt="">
-                        <img class="caracter" src="./img/adao_negro.png" alt="">
+                        <div class="caracter">
+                            <img src="./img/adao_negro.png" alt="">
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -101,6 +115,7 @@
 
 
     <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/menu_mobile.js"></script>
 </body>
 
 </html>

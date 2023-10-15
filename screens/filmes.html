@@ -15,15 +15,21 @@
 <body>
   <header class="header">
     <div class="bg_container_menu">
-      <nav class="menu">
+      <div class="menu_container">
         <a href="../index.html"><img src="../img/logo-white.svg" alt="Logo"></a>
-        <ul class="menu_list">
-          <li><a href="../index.html">Início<span class="menu_ping">.</span></a></li>
-          <li><a href="./filmes.html">Filmes<span class="menu_ping">.</span></a></li>
-          <li><a href="./combos.html">Combos<span class="menu_ping">.</span></a></li>
-          <li><a href="./secoes.html">Programação<span class="menu_ping">.</span></a></li>
-        </ul>
-      </nav>
+
+        <nav class="nav">
+          <button aria-label="Abrir menu" id="btn_mobile" aria-haspopup="true" aria-expanded="false" aria-controls="menu_list">
+            <span id="hamburguer"></span>
+          </button>
+          <ul class="menu_list" role="menu">
+            <li><a href="../index.html">início<span class="menu_ping">.</span> </a></li>
+            <li><a href="./filmes.html">Filmes<span class="menu_ping">.</span></a></li>
+            <li><a href="./combos.html">Combos<span class="menu_ping">.</span></a></li>
+            <li><a href="./secoes.html">Programação<span class="menu_ping">.</span></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <main class="main">
@@ -104,6 +110,8 @@
         </nav>
       </div>
     </footer>
+
+    <script src="../js/menu_mobile.js"></script>
 </body>
 
 </html>
