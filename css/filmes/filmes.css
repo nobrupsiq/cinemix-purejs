@@ -16,7 +16,7 @@
 .list_btn ul {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    gap: 80px;
 }
 
 .list_btn ul li a {
@@ -41,16 +41,24 @@
 /* cards */
 
 .cards_filmes {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
     max-width: 1380px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
     padding: 80px 20px 0px 20px;
+    /* max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 180px;
+    justify-content: center;
+    gap: 20px;
+    padding: 80px 20px 0px 20px; */
 }
 
 .card_container {
-    width: 80%;
+    width: 20%;
     height: max-content;
     min-width: 320px;
     border: 2px solid var(--f_color);
@@ -104,4 +112,29 @@
     height: 390px;
     width: 100%;
     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .main h1 {
+        padding: 0 0 16px 0;
+    }
+    .list_btn {
+        margin-top: 18px;
+    }
+    .list_btn ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 40px;
+        text-align: center;
+        display: flex;
+        place-items: center;
+    }
+    .list_btn ul li a {
+        font-size: 14px;
+        padding: 6px 10px;
+        width: 120px;
+    }
+    .cards_filmes {
+        padding: 60px 20px 0px 20px;
+    }
 }
