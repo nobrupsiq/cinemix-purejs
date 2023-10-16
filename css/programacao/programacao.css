@@ -23,3 +23,13 @@ td {
 .table_body tr:nth-child(odd) {
     background: rgba(156, 136, 255, 0.2);
 }
+
+@media (max-width: 768px) {
+    .table_container {
+        max-width: 90px;
+    }
+    th,
+    td {
+        font-size: 14px;
+    }
+}
