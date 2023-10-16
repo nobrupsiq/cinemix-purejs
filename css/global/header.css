@@ -37,7 +37,8 @@
     font-weight: bold;
 }
 
-.nav ul a:hover {
+.nav ul a:hover,
+.nav ul a.att {
     color: var(--hover);
 }
 
@@ -50,7 +51,8 @@
     transition: 0.3s;
 }
 
-.nav ul a:hover::after {
+.nav ul a:hover::after,
+.nav ul a.att::after {
     background: var(--hover);
     width: 100%;
 }
