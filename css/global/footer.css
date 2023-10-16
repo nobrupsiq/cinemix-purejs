@@ -6,6 +6,7 @@
 .copy_container {
     max-width: 1380px;
     margin: 0 auto;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -30,4 +31,18 @@
 
 .socials a + a {
     margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .copy_container .footer_logo {
+        width: 140px;
+        margin-left: 20px;
+    }
+    .copy_container .socials {
+        margin-right: 10px;
+    }
+    .copy_container p {
+        font-size: 12px;
+        text-align: center;
+    }
 }
