@@ -31,76 +31,103 @@
         </nav>
       </div>
     </div>
+  </header>
 
-    <main class="main">
-      <h1>Programação<span class="menu_ping">.</span></h1>
-      <nav class="list_btn">
-        <ul>
-          <li><a href="">Adicionar</a></li>
-          <li><a href="">Editar</a></li>
-          <li><a href="">Deletar</a></li>
-        </ul>
-      </nav>
-    </main>
+  <main class="main">
+    <h1>Programação<span class="menu_ping">.</span></h1>
+    <nav class="list_btn">
+      <ul>
+        <li><a href="">Adicionar</a></li>
+        <li><a href="">Editar</a></li>
+        <li><a href="">Deletar</a></li>
+      </ul>
+    </nav>
+  </main>
 
-    <Table class="table_container">
-      <thead class="table_head">
-        <tr>
-          <th>Filme</th>
-          <th>Data</th>
-          <th>Horário</th>
-          <th>Auditório</th>
-          <th>Tipo de imagem</th>
-        </tr>
-      </thead>
+  <Table class="table_container">
+    <thead class="table_head">
+      <tr>
+        <th>Filme</th>
+        <th>Data</th>
+        <th>Horário</th>
+        <th>Auditório</th>
+        <th>Tipo de imagem</th>
+      </tr>
+    </thead>
 
-      <tbody class="table_body">
-        <tr>
-          <td>Adão negro</td>
-          <td>13/10/2023</td>
-          <td>20:00</td>
-          <td>Sala 5</td>
-          <td>3D</td>
-        </tr>
-        <tr>
-          <td>Captain marvel</td>
-          <td>13/10/2023</td>
-          <td>21:00</td>
-          <td>Sala 1</td>
-          <td>3D</td>
-        </tr>
-        <tr>
-          <td>Stranger things</td>
-          <td>17/10/2023</td>
-          <td>13:30</td>
-          <td>Sala 3</td>
-          <td>2D</td>
-        </tr>
-        <tr>
-          <td>Deadpol 3</td>
-          <td>25/10/2023</td>
-          <td>15:00</td>
-          <td>Sala 6</td>
-          <td>3D</td>
-        </tr>
-      </tbody>
-    </Table>
+    <tbody class="table_body">
+      <tr>
+        <td>Adão negro</td>
+        <td>13/10/2023</td>
+        <td>20:00</td>
+        <td>Sala 5</td>
+        <td>3D</td>
+      </tr>
+      <tr>
+        <td>Captain marvel</td>
+        <td>13/10/2023</td>
+        <td>21:00</td>
+        <td>Sala 1</td>
+        <td>3D</td>
+      </tr>
+      <tr>
+        <td>Stranger things</td>
+        <td>17/10/2023</td>
+        <td>13:30</td>
+        <td>Sala 3</td>
+        <td>2D</td>
+      </tr>
+      <tr>
+        <td>Deadpol 3</td>
+        <td>25/10/2023</td>
+        <td>15:00</td>
+        <td>Sala 6</td>
+        <td>3D</td>
+      </tr>
+    </tbody>
+  </Table>
 
-    <footer class="copy">
-      <div class="copy_container">
-        <div class="teste">
-          <img src="../img/logo-white.svg" alt="Logo Cinemix">
-        </div>
-        <p>Todos os direitos reservados. </p>
-        <nav class="socials">
-          <a href=""><img src="../img/linkedin.svg" alt="Linkedin"></a>
-          <a href=""><img src="../img/github.svg" alt="GitHub"></a>
-        </nav>
+  <div class="modal_prog_container">
+    <form class="form_prog_add">
+      <label for="prog_titulo">Filme</label>
+      <input id='prog_titulo' type="text" placeholder="Nome do filme">
+
+      <label for="prog_data">Data</label>
+      <input id='prog_data' type="date" placeholder="Data de estréia">
+
+      <label for="prog_horario">Horário</label>
+      <input id='prog_horario' type="text" placeholder="00:00">
+
+      <label for="prog_auditorio">Auditório</label>
+      <input id='prog_auditorio' type="text" placeholder="EX: Sala 1">
+
+      <label for="imagem">Tipo de imagem
+        <select id="imagem">
+          <option value="3d">3D</option>
+          <option value="4d">4D</option>
+          <option value="5d">5D</option>
+      </label>
+      <button>Adicionar</button>
+    </form>
+  </div>
+
+
+
+  <footer class="copy">
+    <div class="copy_container">
+      <div class="teste">
+        <img src="../img/logo-white.svg" alt="Logo Cinemix">
       </div>
-    </footer>
+      <p>Todos os direitos reservados. </p>
+      <nav class="socials">
+        <a href=""><img src="../img/linkedin.svg" alt="Linkedin"></a>
+        <a href=""><img src="../img/github.svg" alt="GitHub"></a>
+      </nav>
+    </div>
+  </footer>
 
-    <script src="../js/menu_mobile.js"></script>
-    <script src="../js/menu_ativo.js"></script>
+  <script src="../js/menu_mobile.js"></script>
+  <script src="../js/menu_ativo.js"></script>
 
 </body>
 
