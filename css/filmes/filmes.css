@@ -2,6 +2,7 @@
     max-width: 1380px;
     margin: 0 auto;
     padding: 40px 0 0px 0;
+    position: relative;
 }
 
 .main h1 {
@@ -48,13 +49,6 @@
     justify-content: center;
     align-items: center;
     padding: 80px 20px 0px 20px;
-    /* max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 180px;
-    justify-content: center;
-    gap: 20px;
-    padding: 80px 20px 0px 20px; */
 }
 
 .card_container {
@@ -141,12 +135,15 @@
 
 /* MODAL ADD */
 
-.modal_filmes_container {
+.modal_filmes_container_add {
     display: flex;
     justify-content: center;
+    visibility: hidden;
 }
 
 .form_filmes_add {
+    position: absolute;
+    top: 10px;
     color: var(--menu_color);
     border: 2px solid var(--f_color);
     border-radius: 6px;
@@ -154,19 +151,19 @@
     background-color: var(--bg);
 }
 
-.modal_filmes_container label {
+.modal_filmes_container_add label {
     display: block;
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 2px;
 }
 
-.modal_filmes_container select {
+.modal_filmes_container_add select {
     display: block;
 }
 
-.modal_filmes_container input,
-.modal_filmes_container select {
+.modal_filmes_container_add input,
+.modal_filmes_container_add select {
     padding: 6px 10px;
     width: 320px;
     font-size: 18px;
@@ -177,7 +174,7 @@
     transition: 0.3s;
 }
 
-.modal_filmes_container textarea {
+.modal_filmes_container_add textarea {
     resize: none;
     /* font-size: 14px; */
     font-family: 'Poppins';
@@ -189,17 +186,17 @@
     transition: 0.3s;
 }
 
-.modal_filmes_container input:focus,
-.modal_filmes_container select:focus,
-.modal_filmes_container textarea:focus {
+.modal_filmes_container_add input:focus,
+.modal_filmes_container_add select:focus,
+.modal_filmes_container_add textarea:focus {
     border: 2px solid var(--btn);
 }
 
-.modal_filmes_container input::placeholder {
+.modal_filmes_container_add input::placeholder {
     font-size: 16px;
 }
 
-.form_filmes_add button {
+.form_filmes_add .add_btn {
     background-color: var(--btn);
     color: var(--f_color);
     border: 2px solid transparent;
@@ -217,6 +214,163 @@
 
 .form_filmes_add button:hover,
 .form_filmes_add button:focus {
+    border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
+}
+
+/* MODAL EDIT */
+
+.modal_filmes_container_edit {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.form_filmes_edit {
+    position: absolute;
+    top: 10px;
+    color: var(--menu_color);
+    border: 2px solid var(--f_color);
+    border-radius: 6px;
+    padding: 20px 18px;
+    background-color: var(--bg);
+}
+
+.modal_filmes_container_edit label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.modal_filmes_container_edit select {
+    display: block;
+}
+
+.modal_filmes_container_edit input,
+.modal_filmes_container_edit select {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_filmes_container_edit textarea {
+    resize: none;
+    font-family: 'Poppins';
+    padding: 4px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_filmes_container_edit input:focus,
+.modal_filmes_container_edit select:focus,
+.modal_filmes_container_edit textarea:focus {
+    border: 2px solid var(--btn);
+}
+
+.modal_filmes_container_edit input::placeholder {
+    font-size: 16px;
+}
+
+.form_filmes_edit .edit_btn {
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form_filmes_edit .edit_btn:hover,
+.form_filmes_edit .edit_btn:focus {
+    border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
+}
+
+/* DELETAR MODAL */
+
+.modal_filmes_container_delet {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.form_filmes_delet {
+    position: absolute;
+    top: 140px;
+    color: var(--menu_color);
+    border: 2px solid var(--f_color);
+    border-radius: 6px;
+    padding: 20px 18px;
+    background-color: var(--bg);
+}
+
+.modal_filmes_container_delet label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.modal_filmes_container_delet select {
+    display: block;
+}
+
+.modal_filmes_container_delet input,
+.modal_filmes_container_delet select {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_filmes_container_delet select:focus {
+    border: 2px solid var(--btn);
+}
+
+.modal_filmes_container_delet input::placeholder {
+    font-size: 16px;
+}
+
+.form_filmes_delet .delet_btn {
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form_filmes_delet .delet_btn:hover,
+.form_filmes_delet .delet_btn:focus {
     border: 2px solid var(--f_color);
     scale: 1.1;
     box-shadow: 4px 4px 1px var(--f_color);
