@@ -129,3 +129,175 @@ td {
     scale: 1.1;
     box-shadow: 4px 4px 1px var(--f_color);
 }
+
+/* MODAL EDIT */
+
+.modal_prog_container_edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.modal_prog_container_edit.ativo,
+.modal_prog_container_edit.ativo .main {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form_prog_edit {
+    color: var(--menu_color);
+    border: 2px solid var(--f_color);
+    border-radius: 6px;
+    padding: 20px 18px;
+    background-color: var(--bg);
+}
+
+.modal_prog_container_edit label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.modal_prog_container_edit select {
+    display: block;
+}
+
+.modal_prog_container_edit input,
+.modal_prog_container_edit select {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_prog_container_edit textarea {
+    resize: none;
+    font-family: 'Poppins';
+    padding: 4px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_prog_container_edit input:focus,
+.modal_prog_container_edit select:focus,
+.modal_prog_container_edit textarea:focus {
+    border: 2px solid var(--btn);
+}
+
+.modal_prog_container_edit input::placeholder {
+    font-size: 16px;
+}
+
+.form_prog_edit button {
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form_prog_edit button:hover,
+.form_prog_edit button:focus {
+    border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
+}
+
+/* MODAL DELETE */
+
+.modal_prog_container_delet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.modal_prog_container_delet.ativo,
+.modal_prog_container_delet.ativo .main {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form_prog_delet {
+    color: var(--menu_color);
+    border: 2px solid var(--f_color);
+    border-radius: 6px;
+    padding: 20px 18px;
+    background-color: var(--bg);
+}
+
+.modal_prog_container_delet label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.modal_prog_container_delet select {
+    display: block;
+    padding: 6px 10px;
+    width: 410px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 6px;
+    transition: 0.3s;
+}
+
+.modal_prog_container_delet select:focus {
+    border: 2px solid var(--btn);
+}
+
+.form_prog_delet .delet_btn {
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form_prog_delet .delet_btn:hover,
+.form_prog_delet .delet_btn:focus {
+    border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
+}

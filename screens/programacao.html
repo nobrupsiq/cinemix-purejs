@@ -88,6 +88,8 @@
     </Table>
   </main>
 
+  <!-- MODAL ADD -->
+
   <div class="modal_prog_container_add">
     <form class="form_prog_add">
       <label for="prog_titulo">Filme</label>
@@ -110,6 +112,52 @@
         </select>
       </label>
       <button>Adicionar</button>
+    </form>
+  </div>
+
+  <!-- MODAL EDIT -->
+
+  <div class="modal_prog_container_edit">
+    <form class="form_prog_edit">
+      <label for="edit_prog">Selecione a programação
+        <select id="edit_prog_select">
+          <option class="opt" value="Selecione" aria-readonly="true">Selecione</option>
+          <option class="opt" value="Adao negro">Adão negro | 13/10/2023 | 20:00 | Sala 5 | 3D</option>
+        </select>
+      </label>
+
+      <label for="prog_titulo">Filme</label>
+      <input id='prog_titulo' type="text" placeholder="Nome do filme">
+
+      <label for="prog_data">Data</label>
+      <input id='prog_data' type="date" placeholder="Data de estréia">
+
+      <label for="prog_horario">Horário</label>
+      <input id='prog_horario' type="text" placeholder="00:00">
+
+      <label for="prog_auditorio">Auditório</label>
+      <input id='prog_auditorio' type="text" placeholder="EX: Sala 1">
+
+      <label for="imagem">Tipo de imagem
+        <select id="imagem">
+          <option value="3d">3D</option>
+          <option value="4d">4D</option>
+          <option value="5d">5D</option>
+        </select>
+      </label>
+      <button class="edit_btn">Editar</button>
+    </form>
+  </div>
+
+  <div class="modal_prog_container_delet">
+    <form class="form_prog_delet">
+      <label for="delet_prog">Selecione a programação
+        <select id="delet_prog_select">
+          <option class="opt" value="Selecione" aria-readonly="true">Selecione</option>
+          <option class="opt" value="Adao negro">Adão negro | 13/10/2023 | 20:00 | Sala 5 | 3D</option>
+        </select>
+      </label>
+      <button class="delet_btn">Deletar</button>
     </form>
   </div>
 
