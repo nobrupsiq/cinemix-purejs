@@ -34,9 +34,25 @@ td {
     }
 }
 
-.modal_prog_container {
+/* MODAL ADD */
+
+.modal_prog_container_add {
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.modal_prog_container_add.ativo,
+.modal_prog_container_add.ativo .main {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .form_prog_add {
@@ -47,19 +63,19 @@ td {
     background-color: var(--bg);
 }
 
-.modal_prog_container label {
+.modal_prog_container_add label {
     display: block;
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 2px;
 }
 
-.modal_prog_container select {
+.modal_prog_container_add select {
     display: block;
 }
 
-.modal_prog_container input,
-.modal_prog_container select {
+.modal_prog_container_add input,
+.modal_prog_container_add select {
     padding: 6px 10px;
     width: 320px;
     font-size: 18px;
@@ -70,9 +86,8 @@ td {
     transition: 0.3s;
 }
 
-.modal_prog_container textarea {
+.modal_prog_container_add textarea {
     resize: none;
-    /* font-size: 14px; */
     font-family: 'Poppins';
     padding: 4px;
     outline: none;
@@ -82,13 +97,13 @@ td {
     transition: 0.3s;
 }
 
-.modal_prog_container input:focus,
-.modal_prog_container select:focus,
-.modal_prog_container textarea:focus {
+.modal_prog_container_add input:focus,
+.modal_prog_container_add select:focus,
+.modal_prog_container_add textarea:focus {
     border: 2px solid var(--btn);
 }
 
-.modal_prog_container input::placeholder {
+.modal_prog_container_add input::placeholder {
     font-size: 16px;
 }
 
