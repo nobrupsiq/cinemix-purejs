@@ -2,6 +2,7 @@
     max-width: 1380px;
     margin: 0 auto;
     padding: 40px 0 0px 0;
+    position: relative;
 }
 
 .main h1 {
@@ -127,14 +128,32 @@
     }
 }
 
-/* Modal */
-
-.modal_combos_container {
-    display: flex;
-    justify-content: center;
+.wrapper_position {
+    position: relative;
 }
 
-.form_combos_add {
+/* MODAL ADD */
+
+.modal_combo_container_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.modal_combo_container_add.ativo,
+.modal_combo_container_add.ativo .main {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form_combo_add {
     color: var(--menu_color);
     border: 2px solid var(--f_color);
     border-radius: 6px;
@@ -142,14 +161,14 @@
     background-color: var(--bg);
 }
 
-.modal_combos_container label {
+.modal_combo_container_add label {
     display: block;
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 2px;
 }
 
-.modal_combos_container input {
+.modal_combo_container_add input {
     padding: 6px 10px;
     width: 320px;
     font-size: 18px;
@@ -160,10 +179,9 @@
     transition: 0.3s;
 }
 
-.modal_combos_container textarea {
+.modal_combo_container_add textarea {
     resize: none;
     display: block;
-    /* font-size: 14px; */
     font-family: 'Poppins';
     padding: 4px;
     outline: none;
@@ -173,16 +191,16 @@
     transition: 0.3s;
 }
 
-.modal_combos_container input:focus,
-.modal_combos_container textarea:focus {
+.modal_combo_container_add input:focus,
+.modal_combo_container_add textarea:focus {
     border: 2px solid var(--btn);
 }
 
-.modal_combos_container input::placeholder {
+.modal_combo_container_add input::placeholder {
     font-size: 16px;
 }
 
-.form_combos_add button {
+.form_combo_add .add_btn {
     background-color: var(--btn);
     color: var(--f_color);
     border: 2px solid transparent;
@@ -198,8 +216,202 @@
     margin-top: 10px;
 }
 
-.form_combos_add button:hover,
-.form_combos_add button:focus {
+.form_combo_add .add_btn:hover,
+.form_combo_add .add_btn:focus {
+    border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
+}
+
+/* MODAL EDIT */
+
+.modal_combo_container_edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.modal_combo_container_edit.ativo,
+.modal_combo_container_edit.ativo .main {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form_combo_edit {
+    color: var(--menu_color);
+    border: 2px solid var(--f_color);
+    border-radius: 6px;
+    padding: 20px 18px;
+    background-color: var(--bg);
+}
+
+.modal_combo_container_edit label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.modal_combo_container_edit input {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_combo_container_edit textarea {
+    resize: none;
+    display: block;
+    font-family: 'Poppins';
+    padding: 4px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_combo_container_edit input:focus,
+.modal_combo_container_edit textarea:focus,
+.modal_combo_container_edit select:focus {
+    border: 2px solid var(--btn);
+}
+
+.modal_combo_container_edit select {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_combo_container_edit input::placeholder {
+    font-size: 16px;
+}
+
+.form_combo_edit .edit_btn {
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form_combo_edit .edit_btn:hover,
+.form_combo_edit .edit_btn:focus {
+    border: 2px solid var(--f_color);
+    scale: 1.1;
+    box-shadow: 4px 4px 1px var(--f_color);
+}
+
+/* MODAL DELETE */
+
+.modal_combo_container_delet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.modal_combo_container_delet.ativo,
+.modal_combo_container_delet.ativo .main {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form_combo_delet {
+    color: var(--menu_color);
+    border: 2px solid var(--f_color);
+    border-radius: 6px;
+    padding: 20px 18px;
+    background-color: var(--bg);
+}
+
+.modal_combo_container_delet label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.modal_combo_container_delet input {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_combo_container_delet input:focus,
+.modal_combo_container_delet select:focus {
+    border: 2px solid var(--btn);
+}
+
+.modal_combo_container_delet select {
+    padding: 6px 10px;
+    width: 320px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--f_color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.modal_combo_container_delet input::placeholder {
+    font-size: 16px;
+}
+
+.form_combo_delet .delet_btn {
+    display: block;
+    background-color: var(--btn);
+    color: var(--f_color);
+    border: 2px solid transparent;
+    width: 120px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form_combo_delet .delet_btn:hover,
+.form_combo_delet .delet_btn:focus {
     border: 2px solid var(--f_color);
     scale: 1.1;
     box-shadow: 4px 4px 1px var(--f_color);
