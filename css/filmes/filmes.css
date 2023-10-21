@@ -60,8 +60,33 @@
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
         rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    position: relative;
 }
+
+.card_banner_img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PLAY BUTTON */
+
+.card_banner_img .trailer_play {
+    position: absolute;
+}
+
+.card_banner .trailer_play img {
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card_banner .trailer_play:hover img {
+    scale: 1.2;
+}
+
+/* FIM PLAY BUTTON */
 
 .card_container .card_title {
     text-transform: uppercase;
