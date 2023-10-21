@@ -37,8 +37,7 @@
     font-weight: bold;
 }
 
-.nav ul a:hover,
-.nav ul a.att {
+.nav ul a:hover {
     color: var(--hover);
 }
 
@@ -48,7 +47,7 @@
     height: 3px;
     width: 0;
     margin-top: 2px;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .nav ul a:hover::after,
