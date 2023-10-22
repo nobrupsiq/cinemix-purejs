@@ -2,6 +2,7 @@
     max-width: 1380px;
     margin: 0 auto;
     padding: 40px 0 0px 0;
+    position: relative;
 }
 
 .main h1 {
@@ -87,6 +88,70 @@
 }
 
 /* FIM PLAY BUTTON */
+
+/* MODAL TRAILER */
+
+.modal_trailer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    /* visibility: hidden; */
+}
+
+.modal_trailer {
+    max-width: 26.25rem;
+    background-color: var(--bg);
+    color: var(--menu_color);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.modal_trailer > div {
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.modal_trailer > div p {
+    overflow-y: scroll;
+    height: 140px;
+}
+
+.modal_trailer > div p::selection {
+    background: var(--btn);
+    color: var(--f_color);
+}
+
+.modal_trailer > div p::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal_trailer > div p::-webkit-scrollbar-thumb {
+    background: var(--btn);
+}
+
+.modal_trailer > div p::-webkit-scrollbar-track {
+    background: var(--f_color);
+}
+
+.modal_trailer h4 {
+    margin: 6px 0;
+    font-size: 18px;
+}
+.modal_trailer p {
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* FIM TRAILER MODAL */
 
 .card_container .card_title {
     text-transform: uppercase;
