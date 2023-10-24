@@ -280,6 +280,12 @@
     border-radius: 6px;
     padding: 20px 18px;
     background-color: var(--bg);
+    scale: 0;
+    transition: 0.3s;
+}
+
+.form_filmes_add.ativo {
+    scale: 1;
 }
 
 .modal_filmes_container_add label {
