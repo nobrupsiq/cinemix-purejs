@@ -102,8 +102,29 @@
     left: 0px;
     z-index: 2000;
     background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+}
 
-    /* visibility: hidden; */
+.modal_trailer .fechar_modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: var(--btn);
+    color: var(--f_color);
+    border-radius: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    transition: 0.3s;
+}
+
+.modal_trailer .fechar_modal:hover {
+    scale: 1.1;
 }
 
 .modal_trailer {
@@ -113,6 +134,13 @@
     border-radius: 4px;
     padding: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    scale: 0;
+    transition: 0.3s;
+}
+
+.modal_trailer.modal_trailer_ativo {
+    scale: 1;
 }
 
 .modal_trailer > div {
