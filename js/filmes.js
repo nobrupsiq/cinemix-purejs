@@ -16,20 +16,29 @@ const modalTrailer = () => {
         modalTrailer.classList.remove('modal_trailer_ativo');
     });
 };
-modalTrailer();
 
-const adicionarFilme = () => {
+const addFilmeModal = () => {
     const modalAdd = document.querySelector('.form_filmes_add');
     const addFilme = document.querySelector('.addFilme');
     const addFilmeContainer = document.querySelector(
         '.modal_filmes_container_add',
     );
+    const fecharModal = document.querySelectorAll('.fechar_modal');
 
-    addFilme.addEventListener('click', (event) => {
-        event.preventDefault();
+    addFilme.addEventListener('click', (e) => {
+        e.preventDefault();
         modalAdd.classList.add('ativo');
         addFilmeContainer.classList.add('ativo');
     });
+    fecharModal.forEach((e) => {
+        e.addEventListener('click', () => {
+            addFilmeContainer.classList.remove('ativo');
+            modalAdd.classList.remove('ativo');
+        });
+    });
 };
 
-adicionarFilme();
+const editFilmeModal = () => {};
+
+modalTrailer();
+addFilmeModal();
