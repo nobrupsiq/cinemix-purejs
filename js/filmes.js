@@ -1,44 +1,80 @@
-const modalTrailer = () => {
-    const playButton = document.querySelectorAll('.trailer_play');
-    const trailerContainer = document.querySelector('.modal_trailer_container');
-    const fecharModal = document.querySelector('.fechar_modal');
-    const modalTrailer = document.querySelector('.modal_trailer');
+// Funções para abrir o modal
+function openModal() {
+    const addFilmeBtn = document.querySelector('.addFilme');
+    const editFilmeBtn = document.querySelector('.editFilme');
+    const delFilmeBtn = document.querySelector('.delFilme');
 
-    playButton.forEach((item) => {
-        item.addEventListener('click', () => {
-            trailerContainer.style.visibility = 'visible';
-            modalTrailer.classList.add('modal_trailer_ativo');
-        });
-    });
+    function activeAddModal(e) {
+        const modalContainer = document.querySelector(
+            '.modal_filmes_container_add',
+        );
+        const formFilmes = document.querySelector('.form_filmes_add');
+        e.preventDefault();
+        modalContainer.classList.add('ativo');
+        formFilmes.classList.add('ativo');
+    }
 
-    fecharModal.addEventListener('click', () => {
-        trailerContainer.style.visibility = 'hidden';
-        modalTrailer.classList.remove('modal_trailer_ativo');
-    });
-};
+    function activeEditModal(e) {
+        const modalContainer = document.querySelector(
+            '.modal_filmes_container_edit',
+        );
+        const formFilmes = document.querySelector('.form_filmes_edit');
+        e.preventDefault();
+        modalContainer.classList.add('ativo');
+        formFilmes.classList.add('ativo');
+    }
 
-const addFilmeModal = () => {
-    const modalAdd = document.querySelector('.form_filmes_add');
-    const addFilme = document.querySelector('.addFilme');
-    const addFilmeContainer = document.querySelector(
-        '.modal_filmes_container_add',
-    );
+    function activeDelModal(e) {
+        const modalContainer = document.querySelector(
+            '.modal_filmes_container_delet',
+        );
+
+        const formFilmes = document.querySelector('.form_filmes_delet');
+        e.preventDefault();
+        modalContainer.classList.add('ativo');
+        formFilmes.classList.add('ativo');
+    }
+
+    addFilmeBtn.addEventListener('click', activeAddModal);
+    editFilmeBtn.addEventListener('click', activeEditModal);
+    delFilmeBtn.addEventListener('click', activeDelModal);
+}
+openModal();
+
+// Funçao para fechar o modal
+function fecharModal() {
     const fecharModal = document.querySelectorAll('.fechar_modal');
 
-    addFilme.addEventListener('click', (e) => {
-        e.preventDefault();
-        modalAdd.classList.add('ativo');
-        addFilmeContainer.classList.add('ativo');
-    });
-    fecharModal.forEach((e) => {
-        e.addEventListener('click', () => {
-            addFilmeContainer.classList.remove('ativo');
-            modalAdd.classList.remove('ativo');
-        });
-    });
-};
+    function closeTargetModal() {
+        let parentTarget = this.parentNode;
+        console.log(parentTarget);
+        const elemPai = parentTarget.closest(
+            '[class*="modal_filmes_container_"]',
+        );
 
-const editFilmeModal = () => {};
+        parentTarget.classList.remove('ativo');
+        elemPai.classList.remove('ativo');
+    }
 
-modalTrailer();
-addFilmeModal();
+    fecharModal.forEach((btn) => {
+        btn.addEventListener('click', closeTargetModal);
+    });
+}
+fecharModal();
+
+// Função para abrir o modal dos trailers
+function trailerModal() {
+    const trailerBtn = document.querySelectorAll('.trailer_play');
+
+    function openTrailerModal() {
+        document
+            .querySelector('.modal_trailer_container')
+            .classList.add('ativo');
+        document.querySelector('.modal_trailer').classList.add('ativo');
+    }
+
+    trailerBtn.forEach((btn) => {
+        btn.addEventListener('click', openTrailerModal);
+    });
+}
+trailerModal();
