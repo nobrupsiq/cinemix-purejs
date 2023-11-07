@@ -64,17 +64,28 @@ fecharModal();
 
 // Função para abrir o modal dos trailers
 function trailerModal() {
+    const fecharModal = document.querySelector('.fechar_modal');
     const trailerBtn = document.querySelectorAll('.trailer_play');
+    const modalTrailer = document.querySelector('.modal_trailer');
+    const modalTrailerContainer = document.querySelector(
+        '.modal_trailer_container',
+    );
 
     function openTrailerModal() {
-        document
-            .querySelector('.modal_trailer_container')
-            .classList.add('ativo');
-        document.querySelector('.modal_trailer').classList.add('ativo');
+        modalTrailerContainer.classList.add('ativo');
+        modalTrailer.classList.add('ativo');
+    }
+
+    function fecharTrailerModal() {
+        modalTrailerContainer.classList.remove('ativo');
+        modalTrailer.classList.remove('ativo');
     }
 
     trailerBtn.forEach((btn) => {
         btn.addEventListener('click', openTrailerModal);
     });
+
+    fecharModal.addEventListener('click', fecharTrailerModal);
 }
+
 trailerModal();
