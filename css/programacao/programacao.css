@@ -15,6 +15,10 @@ td {
     border-collapse: collapse;
 }
 
+.table_container td:first-child {
+    text-align: left;
+}
+
 .table_body td {
     text-align: left;
     width: 20%;

@@ -57,3 +57,25 @@ function fecharModal() {
     });
 }
 fecharModal();
+
+async function getProgramacao() {
+    const url =
+        'https://cinemix-7d469-default-rtdb.firebaseio.com/sessoes.json';
+    const response = await fetch(url);
+    const programacao = await response.json();
+    console.log(programacao);
+
+    programacao.forEach((sessao) => {
+        const tableContainer = document.querySelector('.table_container');
+        tableContainer.innerHTML += `
+        <tr>
+          <td>${sessao.titulo_filme}</td>
+          <td>${sessao.data}</td>
+          <td>${sessao.horario}</td>
+          <td>${sessao.auditorio}</td>
+          <td>${sessao.imagem_tipo}</td>
+        </tr>
+        `;
+    });
+}
+getProgramacao();
