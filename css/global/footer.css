@@ -1,6 +1,8 @@
 .copy {
     background: var(--bg);
     color: var(--menu_color);
+    max-width: 1380px;
+    margin: 0 auto;
 }
 
 .copy_container {

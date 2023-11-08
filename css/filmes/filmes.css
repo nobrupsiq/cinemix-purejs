@@ -1,5 +1,4 @@
 .main {
-    display: grid;
     place-content: center;
     place-items: center;
     max-width: 1380px;

@@ -17,7 +17,7 @@ td {
 
 .table_body td {
     text-align: left;
-    width: 10%;
+    width: 20%;
 }
 
 .table_body tr:nth-child(odd) {

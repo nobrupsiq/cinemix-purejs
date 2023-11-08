@@ -46,6 +46,7 @@ function fecharModal() {
     const fecharModal = document.querySelectorAll('.fechar_modal');
 
     function closeTargetModal() {
+        ifr.src = '';
         let parentTarget = this.parentNode;
         console.log(parentTarget);
         const elemPai = parentTarget.closest(
@@ -74,6 +75,8 @@ function trailerModal() {
     function openTrailerModal() {
         modalTrailerContainer.classList.add('ativo');
         modalTrailer.classList.add('ativo');
+        ifr.src =
+            'https://www.youtube.com/embed/HluMG9tJXHM?si=YWrFAA9ddDCZuXjq';
     }
 
     function fecharTrailerModal() {

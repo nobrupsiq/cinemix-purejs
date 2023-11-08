@@ -4,6 +4,8 @@
 
 .bg_container_menu {
     background: var(--bg);
+    max-width: 1380px;
+    margin: 0 auto;
 }
 
 .menu_container {
