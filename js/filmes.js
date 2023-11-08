@@ -48,7 +48,6 @@ function fecharModal() {
     function closeTargetModal() {
         ifr.src = '';
         let parentTarget = this.parentNode;
-        console.log(parentTarget);
         const elemPai = parentTarget.closest(
             '[class*="modal_filmes_container_"]',
         );
@@ -75,8 +74,6 @@ function trailerModal() {
     function openTrailerModal() {
         modalTrailerContainer.classList.add('ativo');
         modalTrailer.classList.add('ativo');
-        ifr.src =
-            'https://www.youtube.com/embed/HluMG9tJXHM?si=YWrFAA9ddDCZuXjq';
     }
 
     function fecharTrailerModal() {
@@ -90,5 +87,49 @@ function trailerModal() {
 
     fecharModal.addEventListener('click', fecharTrailerModal);
 }
-
 trailerModal();
+
+// FUNCIONALIDADE EXIBIR OS FILMES DA API
+
+// URL API FILMES https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json
+
+async function getFilmes() {
+    const url = 'https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json';
+    const response = await fetch(url);
+    const filmes = await response.json();
+
+    filmes.forEach((filme) => {
+        const regex = /(?<=[^'])'(?=[^'])/g;
+        const cardsContainer = document.querySelector('.cards_filmes');
+        cardsContainer.innerHTML += `
+         <div class="card_container">
+          <div class="card_banner">
+            <div class="card_banner_img">
+              <img src="${filme.imagem}" alt="">
+              <span class="trailer_play"><img onclick="setMovie('${
+                  filme.trailer
+              }', '${filme.descricao.replace(
+            regex,
+            '',
+        )}')" src="../img/play-fill.svg" alt=""></span>
+            </div>
+            <div class="card">
+              <h3 class="card_title">${filme.titulo}</h3>
+              <p class="card_desc"><span>Descrição</span>${filme.descricao.slice(
+                  0,
+                  180,
+              )}. . .</p>
+              <p class="card_gen"><span>Gênero: </span>${filme.genero}</p>
+            </div>
+          </div>
+        </div>
+         `;
+    });
+    trailerModal();
+}
+function setMovie(link, desc) {
+    ifr.src = link;
+    descTrailer.innerHTML = desc;
+}
+
+getFilmes();

@@ -55,10 +55,8 @@
 
 .card_container {
     width: 20%;
-    height: max-content;
     min-width: 320px;
     border: 2px solid var(--f_color);
-    margin-bottom: 40px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
@@ -135,7 +133,7 @@
 }
 
 .modal_trailer {
-    max-width: 26.25rem;
+    max-width: 28rem;
     background-color: var(--bg);
     color: var(--menu_color);
     border-radius: 4px;
@@ -206,6 +204,9 @@
     padding: 0 20px 16px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.7);
+
+    height: 150px;
+    overflow: hidden;
 }
 
 .card_container .card_desc span {
@@ -216,6 +217,7 @@
 }
 
 .card_container .card_gen {
+    margin-top: 14px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.7);
 }
