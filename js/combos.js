@@ -57,3 +57,28 @@ function fecharModal() {
     });
 }
 fecharModal();
+
+// FUNCIONALIDADE FETCH API
+
+async function getCombos() {
+    const url = 'https://cinemix-7d469-default-rtdb.firebaseio.com/combos.json';
+    const response = await fetch(url);
+    const filmes = await response.json();
+
+    filmes.forEach((combo) => {
+        const cardComboContainer = document.querySelector('.cards_combos');
+
+        cardComboContainer.innerHTML += `
+        <div class="card_combos_container">
+          <div class="card_combos_banner">
+            <img src="${combo.imagem}" alt="">
+            <div class="card_combo_specs">
+              <h3 class="card_combo_title">${combo.nome}</h3>
+              <p class="card_combo_desc"><span>Acompanha</span>${combo.descricao}</p>
+            </div>
+          </div>
+        </div>
+        `;
+    });
+}
+getCombos();
