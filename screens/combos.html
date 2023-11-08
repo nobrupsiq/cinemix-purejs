@@ -36,9 +36,9 @@
       <h1>Combos<span class="menu_ping">.</span></h1>
       <nav class="list_btn">
         <ul>
-          <li><a href="">Adicionar combo</a></li>
-          <li><a href="">Editar combo</a></li>
-          <li><a href="">Deletar combo</a></li>
+          <li><a class="addBtn" href="">Adicionar combo</a></li>
+          <li><a class="editBtn" href="">Editar combo</a></li>
+          <li><a class="delBtn" href="">Deletar combo</a></li>
         </ul>
       </nav>
 
@@ -46,6 +46,7 @@
 
       <div class="modal_combo_container_add">
         <form class="form_combo_add">
+          <span class="fechar_modal">X</span>
           <label for="combo_banner">Banner</label>
           <input id='combo_banner' type="text" placeholder="URL do combo">
 
@@ -64,6 +65,7 @@
 
       <div class="modal_combo_container_edit">
         <form class="form_combo_edit">
+          <span class="fechar_modal">X</span>
           <label for="selecionar_combo">Selecionar combo</label>
           <select id="selecionar_combo">
             <option value="Combo mini">Combo mini</option>
@@ -86,6 +88,7 @@
 
       <div class="modal_combo_container_delet">
         <form class="form_combo_delet">
+          <span class="fechar_modal">X</span>
           <label for="selecionar_combo">Selecionar combo</label>
           <select id="selecionar_combo">
             <option value="Combo mini">Combo mini</option>
@@ -151,6 +154,7 @@
 
       <script src="../js/menu_mobile.js"></script>
       <script src="../js/menu_ativo.js"></script>
+      <script src="../js/combos.js"></script>
 </body>
 
 </html>
