@@ -391,7 +391,7 @@
     color: var(--menu_color);
     border: 2px solid var(--f_color);
     border-radius: 6px;
-    padding: 20px 18px;
+    padding: 10px 18px;
     background-color: var(--bg);
     scale: 0;
     transition: 0.3s;
@@ -414,13 +414,13 @@
 
 .modal_filmes_container_edit input,
 .modal_filmes_container_edit select {
-    padding: 6px 10px;
+    padding: 4px 10px;
     width: 320px;
     font-size: 18px;
     outline: none;
     border: 2px solid var(--f_color);
     border-radius: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     transition: 0.3s;
 }
 
@@ -450,7 +450,7 @@
     color: var(--f_color);
     border: 2px solid transparent;
     width: 120px;
-    padding: 5px;
+    padding: 2px;
     outline: none;
     font-size: 18px;
     border-radius: 4px;
