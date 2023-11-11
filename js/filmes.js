@@ -92,13 +92,13 @@ trailerModal();
 // FUNCIONALIDADE EXIBIR OS FILMES DA API
 
 // URL API FILMES https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json
+const url = 'https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json';
 
 async function getFilmes() {
-    const url = 'https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json';
     const response = await fetch(url);
     const filmes = await response.json();
 
-    filmes.forEach((filme) => {
+    filmes.map((filme) => {
         const regex = /(?<=[^'])'(?=[^'])/g;
         const cardsContainer = document.querySelector('.cards_filmes');
         cardsContainer.innerHTML += `
@@ -124,12 +124,37 @@ async function getFilmes() {
           </div>
         </div>
          `;
-    });
+    }, {});
     trailerModal();
 }
 function setMovie(link, desc) {
     ifr.src = link;
     descTrailer.innerHTML = desc;
 }
-
 getFilmes();
+
+function addFilme() {
+    const obj = {
+        imagem: document.querySelector('#filme_banner').value,
+        titulo: document.querySelector('#filme_titulo').value,
+        trailer: document.querySelector('#filme_trailer').value,
+        descricao: document.querySelector('#filme_descricao').value,
+        genero: document.querySelector('#genero').value,
+    };
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro na resposta da API');
+            }
+        })
+        .then((data) => {
+            console.log('Resposta da API após adicionar filme: ', data);
+        })
+        .catch((error) => console.error('Erro ao adicionar filme', error));
+}
