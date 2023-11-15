@@ -91,14 +91,15 @@ trailerModal();
 
 // FUNCIONALIDADE EXIBIR OS FILMES DA API
 
-// URL API FILMES https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json
-const url = 'https://cinemix-7d469-default-rtdb.firebaseio.com/filmes.json';
+const url = 'http://localhost:3000/filmes/';
+
+let filmesList = [];
 
 async function getFilmes() {
     const response = await fetch(url);
     const filmes = await response.json();
-
-    filmes.map((filme) => {
+    filmesList = filmes;
+    filmes.forEach((filme) => {
         const regex = /(?<=[^'])'(?=[^'])/g;
         const cardsContainer = document.querySelector('.cards_filmes');
         cardsContainer.innerHTML += `
@@ -135,6 +136,7 @@ getFilmes();
 
 function addFilme() {
     const obj = {
+        id: document.querySelector('.edit_id').value,
         imagem: document.querySelector('#filme_banner').value,
         titulo: document.querySelector('#filme_titulo').value,
         trailer: document.querySelector('#filme_trailer').value,
@@ -157,4 +159,97 @@ function addFilme() {
             console.log('Resposta da API após adicionar filme: ', data);
         })
         .catch((error) => console.error('Erro ao adicionar filme', error));
+}
+
+const editBtn = document.querySelector('.edit_btn');
+
+editBtn.addEventListener('click', editFilme);
+function editFilme(e) {
+    e.preventDefault();
+    let obj = {
+        id: document.querySelector('.edit_id').value,
+        titulo: document.querySelector('.edit_filme_titulo').value,
+        genero: document.querySelector('.edit_genero').value,
+        descricao: document.querySelector('.edit_filme_descricao').value,
+        imagem: document.querySelector('.edit_filme_banner').value,
+        trailer: document.querySelector('.edit_filme_trailer').value,
+    };
+
+    fetch(url + obj.id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    });
+}
+
+function selectFilmeTargetEdit() {
+    const selecionarFilme = document.querySelector('#edit_selecionar_filme');
+    fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((filme) => titulos.push(filme.titulo));
+
+            titulos.forEach((titulo) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = titulo;
+                createOption.value = titulo;
+                selecionarFilme.appendChild(createOption);
+            });
+        });
+}
+selectFilmeTargetEdit();
+
+function fillInput() {
+    let x = filmesList.find(
+        (e) =>
+            e.titulo == document.querySelector('#edit_selecionar_filme').value,
+    );
+    document.querySelector('.edit_id').value = x.id;
+    document.querySelector('.edit_filme_banner').value = x.imagem;
+    document.querySelector('.edit_filme_titulo').value = x.titulo;
+    document.querySelector('.edit_filme_trailer').value = x.trailer;
+    document.querySelector('.edit_filme_descricao').value = x.descricao;
+    document.querySelector('.edit_genero').value = x.genero;
+}
+
+function selectFilmeTargetDelete() {
+    const selecionarFilme = document.querySelector('#del_selecionar_filme');
+    fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((filme) => titulos.push(filme.titulo));
+
+            titulos.forEach((titulo) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = titulo;
+                createOption.value = titulo;
+                selecionarFilme.appendChild(createOption);
+            });
+        });
+}
+selectFilmeTargetDelete();
+
+const deleteBtn = document.querySelector('.delet_btn');
+deleteBtn.addEventListener('click', deletFilme);
+
+function deletFilme(e) {
+    e.preventDefault();
+    const obj = {
+        id: filmesList.find(
+            (e) =>
+                e.titulo ==
+                document.querySelector('#del_selecionar_filme').value,
+        ).id,
+    };
+    fetch(url + obj.id, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    });
 }
