@@ -139,7 +139,9 @@ function addFilme() {
         id: document.querySelector('.edit_id').value,
         imagem: document.querySelector('#filme_banner').value,
         titulo: document.querySelector('#filme_titulo').value,
-        trailer: document.querySelector('#filme_trailer').value,
+        trailer: convertLinkYoutube(
+            document.querySelector('#filme_trailer').value,
+        ),
         descricao: document.querySelector('#filme_descricao').value,
         genero: document.querySelector('#genero').value,
     };
@@ -172,7 +174,9 @@ function editFilme(e) {
         genero: document.querySelector('.edit_genero').value,
         descricao: document.querySelector('.edit_filme_descricao').value,
         imagem: document.querySelector('.edit_filme_banner').value,
-        trailer: document.querySelector('.edit_filme_trailer').value,
+        trailer: convertLinkYoutube(
+            document.querySelector('.edit_filme_trailer').value,
+        ),
     };
 
     fetch(url + obj.id, {
@@ -252,4 +256,10 @@ function deletFilme(e) {
         },
         body: JSON.stringify(obj),
     });
+}
+
+// FUNÇÃO PARA CONVERTER LINK DO TRAILER PARA EMBED
+function convertLinkYoutube(url) {
+    let embed = url.match('v=([^&]+)');
+    return 'https://www.youtube.com/embed/' + embed[1];
 }
