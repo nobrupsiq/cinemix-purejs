@@ -61,7 +61,7 @@ fecharModal();
 // FUNCIONALIDADE FETCH API
 
 async function getCombos() {
-    const url = 'https://cinemix-7d469-default-rtdb.firebaseio.com/combos.json';
+    const url = ' http://localhost:3000/combos';
     const response = await fetch(url);
     const filmes = await response.json();
 
@@ -82,3 +82,35 @@ async function getCombos() {
     });
 }
 getCombos();
+
+// ADD COMBO
+const url = 'http://localhost:3000/combos';
+function addCombo(e) {
+    e.preventDefault();
+    const obj = {
+        descricao: document.querySelector('.add_combo_descricao').value,
+        id: document.querySelector('.combo_id').value,
+        imagem: document.querySelector('.add_combo_banner').value,
+        nome: document.querySelector('.add_combo_titulo').value,
+    };
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro na resposta da API');
+            }
+        })
+        .then((data) => {
+            console.log('Resposta da API após adicionar combo: ', data);
+        })
+        .catch((error) => console.error('Erro ao combo filme', error));
+}
+
+const addComboBtn = document.querySelector('.add_btn');
+addComboBtn.addEventListener('click', addCombo);

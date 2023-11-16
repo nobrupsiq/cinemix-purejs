@@ -92,9 +92,7 @@ trailerModal();
 // FUNCIONALIDADE EXIBIR OS FILMES DA API
 
 const url = 'http://localhost:3000/filmes/';
-
 let filmesList = [];
-
 async function getFilmes() {
     const response = await fetch(url);
     const filmes = await response.json();
@@ -128,6 +126,7 @@ async function getFilmes() {
     }, {});
     trailerModal();
 }
+
 function setMovie(link, desc) {
     ifr.src = link;
     descTrailer.innerHTML = desc;
@@ -164,7 +163,6 @@ function addFilme() {
 }
 
 const editBtn = document.querySelector('.edit_btn');
-
 editBtn.addEventListener('click', editFilme);
 function editFilme(e) {
     e.preventDefault();
@@ -239,7 +237,6 @@ selectFilmeTargetDelete();
 
 const deleteBtn = document.querySelector('.delet_btn');
 deleteBtn.addEventListener('click', deletFilme);
-
 function deletFilme(e) {
     e.preventDefault();
     const obj = {
