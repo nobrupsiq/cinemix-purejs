@@ -172,3 +172,42 @@ function fillInput() {
 }
 
 // DELETE COMBO
+
+function selectComboTargetDelete() {
+    const selecionarCombo = document.querySelector('#delete_selecionar_combo');
+    fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((combo) => titulos.push(combo.nome));
+
+            titulos.forEach((nome) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = nome;
+                createOption.value = nome;
+                selecionarCombo.appendChild(createOption);
+            });
+        });
+}
+selectComboTargetDelete();
+
+const deleteButton = document.querySelector('.delet_btn');
+deleteButton.addEventListener('click', comboDelete);
+function comboDelete(e) {
+    e.preventDefault();
+    const obj = {
+        id: combosList.find(
+            (combo) =>
+                combo.nome ==
+                document.querySelector('#delete_selecionar_combo').value,
+        ).id,
+    };
+
+    fetch(url + obj.id, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    });
+}
