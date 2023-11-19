@@ -59,8 +59,7 @@ function fecharModal() {
 fecharModal();
 
 async function getProgramacao() {
-    const url =
-        'https://cinemix-7d469-default-rtdb.firebaseio.com/sessoes.json';
+    const url = 'http://localhost:3000/sessoes';
     const response = await fetch(url);
     const programacao = await response.json();
     console.log(programacao);

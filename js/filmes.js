@@ -166,7 +166,7 @@ const editBtn = document.querySelector('.edit_btn');
 editBtn.addEventListener('click', editFilme);
 function editFilme(e) {
     e.preventDefault();
-    let obj = {
+    const obj = {
         id: document.querySelector('.edit_id').value,
         titulo: document.querySelector('.edit_filme_titulo').value,
         genero: document.querySelector('.edit_genero').value,

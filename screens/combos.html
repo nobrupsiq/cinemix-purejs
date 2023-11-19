@@ -50,7 +50,7 @@
           <label for="combo_banner">Banner</label>
           <input id='combo_banner' class="add_combo_banner" type="text" placeholder="URL do combo">
 
-          <input type="text" class="combo_id">
+          <input type="text" id="combo_id" style="display: none;">
 
           <label for="combo_titulo">Titulo</label>
           <input id='combo_titulo' class="add_combo_titulo" type="text" placeholder="Nome do combo">
@@ -69,19 +69,20 @@
         <form class="form_combo_edit">
           <span class="fechar_modal">X</span>
           <label for="selecionar_combo">Selecionar combo</label>
-          <select id="selecionar_combo">
+          <select id="edit_selecionar_combo" onchange="fillInput()">
             <option value="Selecionar" selected disabled>Selecionar</option>
-            <option value="Combo mini">Combo mini</option>
           </select>
 
+          <input type="text" id="combo_id" style="display: none">
+
           <label for="combo_banner">Banner</label>
-          <input id='combo_banner' type="text" placeholder="URL do combo">
+          <input id='combo_banner' class="edit_combo_banner" type="text" placeholder="URL do combo">
 
           <label for="combo_titulo">Titulo</label>
-          <input id='combo_titulo' type="text" placeholder="Nome do combo">
+          <input id='combo_titulo' class="edit_combo_titulo" type="text" placeholder="Nome do combo">
 
           <label for="combo_descricao">Descrição</label>
-          <textarea id="combo_descricao" cols="49" rows="4"></textarea>
+          <textarea id="combo_descricao" class="edit_combo_descricao" cols="49" rows="4"></textarea>
           </label>
           <button class="edit_btn">Editar</button>
         </form>

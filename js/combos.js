@@ -59,13 +59,15 @@ function fecharModal() {
 fecharModal();
 
 // FUNCIONALIDADE FETCH API
+let combosList;
 
 async function getCombos() {
     const url = ' http://localhost:3000/combos';
     const response = await fetch(url);
-    const filmes = await response.json();
+    const combos = await response.json();
+    combosList = combos;
 
-    filmes.forEach((combo) => {
+    combos.forEach((combo) => {
         const cardComboContainer = document.querySelector('.cards_combos');
 
         cardComboContainer.innerHTML += `
@@ -84,12 +86,13 @@ async function getCombos() {
 getCombos();
 
 // ADD COMBO
-const url = 'http://localhost:3000/combos';
+
+const url = 'http://localhost:3000/combos/';
 function addCombo(e) {
     e.preventDefault();
     const obj = {
         descricao: document.querySelector('.add_combo_descricao').value,
-        id: document.querySelector('.combo_id').value,
+        id: document.querySelector('#combo_id').value,
         imagem: document.querySelector('.add_combo_banner').value,
         nome: document.querySelector('.add_combo_titulo').value,
     };
@@ -110,7 +113,62 @@ function addCombo(e) {
             console.log('Resposta da API após adicionar combo: ', data);
         })
         .catch((error) => console.error('Erro ao combo filme', error));
+    getCombos();
 }
-
 const addComboBtn = document.querySelector('.add_btn');
 addComboBtn.addEventListener('click', addCombo);
+
+// EDIT COMBO
+
+const editBtn = document.querySelector('.edit_btn');
+editBtn.addEventListener('click', comboEdit);
+function comboEdit(e) {
+    e.preventDefault();
+    const obj = {
+        id: document.querySelector('#combo_id').value,
+        imagem: document.querySelector('.edit_combo_banner').value,
+        nome: document.querySelector('.edit_combo_titulo').value,
+        descricao: document.querySelector('.edit_combo_descricao').value,
+    };
+
+    fetch(url + obj.id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    });
+    getCombos();
+}
+
+// CRIA OPTIONS DENTRO DO SELECT COM O NOME DOS COMBOS QUE EXISTEM NA API
+function selectComboTargetEdit() {
+    const selecionarCombo = document.querySelector('#edit_selecionar_combo');
+    fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((combo) => titulos.push(combo.nome));
+
+            titulos.forEach((nome) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = nome;
+                createOption.value = nome;
+                selecionarCombo.appendChild(createOption);
+            });
+        });
+}
+selectComboTargetEdit();
+
+// PREENCHE AS INFORMAÇÕES DO COMBO SELECIONADO
+function fillInput() {
+    let x = combosList.find(
+        (e) => e.nome == document.querySelector('#edit_selecionar_combo').value,
+    );
+    document.querySelector('#combo_id').value = x.id;
+    document.querySelector('.edit_combo_banner').value = x.imagem;
+    document.querySelector('.edit_combo_titulo').value = x.nome;
+    document.querySelector('.edit_combo_descricao').value = x.descricao;
+}
+
+// DELETE COMBO
