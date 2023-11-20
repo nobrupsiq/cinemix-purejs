@@ -63,13 +63,13 @@
           <label for="filme_banner">Banner</label>
           <input id='filme_banner' type="text" placeholder="URL do banner">
 
-          <input id='filme_id' onchange="convertLinkYoutube(url)" style="display: none" class="edit_id" type="text" placeholder="ID">
+          <input id='filme_id' onchange="convertLinkYoutube(url)" style="display: none" type="text" placeholder="ID">
 
           <label for="filme_titulo">Titulo</label>
           <input id='filme_titulo' type="text" placeholder="Titulo do filme">
 
           <label for="filme_trailer">Trailer</label>
-          <input id='filme_trailer' type="text" placeholder="URL do trailer">
+          <input id='filme_trailer' required type="text" placeholder="URL do trailer">
 
           <label for="filme_descricao">Descrição</label>
           <textarea id="filme_descricao" cols="49" rows="6"></textarea>
@@ -119,7 +119,7 @@
               <option value="Thriller">Thriller</option>
             </select>
           </label>
-          <button class="add_btn" onclick="addFilme(event)">Adicionar</button>
+          <button class="add_btn">Adicionar</button>
         </form>
       </div>
 

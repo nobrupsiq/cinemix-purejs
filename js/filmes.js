@@ -116,7 +116,7 @@ async function getFilmes() {
               <h3 class="card_title">${filme.titulo}</h3>
               <p class="card_desc"><span>Descrição</span>${filme.descricao.slice(
                   0,
-                  180,
+                  160,
               )}. . .</p>
               <p class="card_gen"><span>Gênero: </span>${filme.genero}</p>
             </div>
@@ -133,9 +133,12 @@ function setMovie(link, desc) {
 }
 getFilmes();
 
-function addFilme() {
+const addBtn = document.querySelector('.add_btn');
+addBtn.addEventListener('click', addFilme);
+function addFilme(e) {
+    e.preventDefault();
     const obj = {
-        id: document.querySelector('.edit_id').value,
+        id: document.querySelector('#filme_id').value,
         imagem: document.querySelector('#filme_banner').value,
         titulo: document.querySelector('#filme_titulo').value,
         trailer: convertLinkYoutube(
