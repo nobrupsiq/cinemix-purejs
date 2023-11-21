@@ -1,10 +1,10 @@
 {
   "combos": [
     {
-      "descricao": "Pipoca Mini + Refrigerante 500ML",
       "id": "1",
       "imagem": "https://media.discordapp.net/attachments/821205003758862369/1171938611504095272/combo-mini.png",
-      "nome": "Combo Mini"
+      "nome": "Combo Mini",
+      "descricao": "Pipoca Mini + Refrigerante 500ML"
     },
     {
       "descricao": "Pipoca Mega + Refrigerante 700ML",
@@ -19,10 +19,10 @@
       "nome": "Combo Super"
     },
     {
-      "descricao": "Pipoca Giga + Refrigerante 1000ML",
       "id": "4",
       "imagem": "https://media.discordapp.net/attachments/821205003758862369/1171938610887532544/combo-giga.png",
-      "nome": "Combo Giga"
+      "nome": "Combo Giga",
+      "descricao": "Pipoca Giga + Refrigerante 1000ML"
     }
   ],
   "filmes": [
@@ -43,12 +43,12 @@
       "trailer": "https://www.youtube.com/embed/4QRdB4RAQMs?si=LtuVptl-7WnjHdhv"
     },
     {
-      "descricao": "Creed 3 terá o retorno de Michael B. Jordan como Adonis, filho da lenda Apollo Creed. No entanto, desta vez, parece que ele não enfrentará ninguém do passado de Rocky ou de seu pai, e, em vez disso, enfrentará seus próprios demônios na forma de um amigo, Dame Anderson (Jonathan Majors).",
-      "genero": "Ação",
       "id": "3",
-      "imagem": "https://dx35vtwkllhj9.cloudfront.net/united-artists-releasing/creed-iii/images/regions/us/onesheet.jpg",
       "titulo": "Creed III",
-      "trailer": "https://www.youtube.com/embed/UfAZlCBZDjg?si=2dHB7P3fQrX65KOJ"
+      "genero": "Ação",
+      "descricao": "Creed 3 terá o retorno de Michael B. Jordan como Adonis, filho da lenda Apollo Creed. No entanto, desta vez, parece que ele não enfrentará ninguém do passado de Rocky ou de seu pai, e, em vez disso, enfrentará seus próprios demônios na forma de um amigo, Dame Anderson (Jonathan Majors).",
+      "imagem": "https://dx35vtwkllhj9.cloudfront.net/united-artists-releasing/creed-iii/images/regions/us/onesheet.jpg",
+      "trailer": "https://www.youtube.com/embed/koXO4bo8dEg"
     },
     {
       "id": "4",
@@ -113,6 +113,14 @@
       "trailer": "https://www.youtube.com/embed/nsdjzHqlb_Q",
       "descricao": "Depois de um erro desastroso, um assassino enfrenta quem o contratou e a si mesmo em uma caçada internacional por vingança. Mas ele jura que nada disso é pessoal.",
       "genero": "Thriller"
+    },
+    {
+      "id": "qGD5k61",
+      "titulo": "Avatar Netflix",
+      "genero": "Ficção científica",
+      "descricao": "As quatro nações do mundo já viveram em harmonia com o Avatar, o mestre dos quatros elementos, mantendo a paz entre elas. Tudo mudou quando a Nação do Fogo deu seu primeiro passo para conquistar o mundo atacando e aniquilando os Nômades do Ar. Avatar: O Último Mestre do Ar conta a história do jovem Nômade do Ar Aang, que desperta em um mundo tomado pela guerra. Ao lado dos novos amigos Sokka e Katara, ele embarca em uma grande missão para reclamar seu posto legítimo como o próximo Avatar.",
+      "imagem": "https://t.ctcdn.com.br/2IhliZIQmCYe4B-FFfcQJu8zwpg=/717x477/smart/i754842.jpeg",
+      "trailer": "https://www.youtube.com/embed/Tj6XC1Xw_oE"
     }
   ],
   "sessoes": [

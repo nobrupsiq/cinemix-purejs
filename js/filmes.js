@@ -260,6 +260,7 @@ function deletFilme(e) {
 
 // FUNÇÃO PARA CONVERTER LINK DO TRAILER PARA EMBED
 function convertLinkYoutube(url) {
-    let embed = url.match('v=([^&]+)');
+    const embed = url.match('v=([^&]+)');
+    if (!embed) return url;
     return 'https://www.youtube.com/embed/' + embed[1];
 }
