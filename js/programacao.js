@@ -62,7 +62,6 @@ async function getProgramacao() {
     const url = 'http://localhost:3000/sessoes';
     const response = await fetch(url);
     const programacao = await response.json();
-    console.log(programacao);
 
     programacao.forEach((sessao) => {
         const tableContainer = document.querySelector('.table_container');
@@ -85,13 +84,18 @@ const url = 'http://localhost:3000/sessoes';
 const progBtnAdd = document.querySelector('.prog_add_btn');
 progBtnAdd.addEventListener('click', addProgramacao);
 
+// Adicionar programacao
 function addProgramacao() {
     const obj = {
         id: document.querySelector('.prog_id_add').value,
         titulo_filme: document.querySelector('.prog_titulo_add').value,
-        data: document.querySelector('.prog_data_add').value,
+        data: document
+            .querySelector('.prog_data_add')
+            .value.split('-')
+            .reverse()
+            .join('/'),
         horario: document.querySelector('.prog_hora_add').value,
-        autitorio: document.querySelector('.prog_auditorio_add').value,
+        auditorio: document.querySelector('.prog_auditorio_add').value,
         imagem_tipo: document.querySelector('.prog_imagem_add').value,
     };
 
