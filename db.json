@@ -126,11 +126,11 @@
   "sessoes": [
     {
       "id": 1,
-      "titulo_filme": "Adão Negro",
+      "titulo_filme": "Adão Negro 2",
       "data": "23/11/2023",
       "horario": "20:00",
       "auditorio": "Sala 4",
-      "imagem_tipo": "2D"
+      "imagem_tipo": "3D"
     },
     {
       "id": 2,
@@ -139,14 +139,6 @@
       "horario": "20:00",
       "auditorio": "Sala 3",
       "imagem_tipo": "2D"
-    },
-    {
-      "id": 3,
-      "titulo_filme": "Creed III",
-      "data": "04/02/2024",
-      "horario": "19:00",
-      "auditorio": "Sala 1",
-      "imagem_tipo": "3D"
     }
   ]
 }

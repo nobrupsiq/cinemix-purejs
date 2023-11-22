@@ -283,7 +283,7 @@ td {
 .modal_prog_container_delet select {
     display: block;
     padding: 6px 10px;
-    width: 410px;
+    width: 320px;
     font-size: 18px;
     outline: none;
     border: 2px solid var(--f_color);
