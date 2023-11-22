@@ -125,92 +125,28 @@
   ],
   "sessoes": [
     {
-      "auditorio": "Sala 1",
-      "data": "Dec 15, 2022",
-      "horario": "23:59:00",
-      "id": "1",
-      "imagem_tipo": "2D",
-      "titulo_filme": "Creed 3"
-    },
-    {
-      "auditorio": "Sala 2",
-      "data": "Dec 16, 2022",
-      "horario": "23:59:00",
-      "id": "2",
-      "imagem_tipo": "3D",
-      "titulo_filme": "Tron"
-    },
-    {
-      "auditorio": "Sala 3",
-      "data": "Dec 17, 2022",
-      "horario": "23:59:00",
-      "id": "3",
-      "imagem_tipo": "4D",
-      "titulo_filme": "Avatar"
-    },
-    {
-      "auditorio": "Sala 4",
-      "data": "Dec 13, 2022",
-      "horario": "17:00",
-      "id": "2_hSd4h",
-      "imagem_tipo": "4D",
-      "titulo_filme": "Adão Negro"
-    },
-    {
-      "auditorio": "Sala 1",
-      "data": "14/12/2022",
-      "horario": "17:00",
-      "id": "eQWOCSl",
-      "imagem_tipo": "3D",
-      "titulo_filme": "Vingadores Ultimato"
-    },
-    {
-      "id": "qswBtw4",
-      "titulo_filme": "Teste",
-      "data": "2024-11-10",
-      "horario": "21:00",
-      "autitorio": "Sala 8",
-      "imagem_tipo": "4d"
-    },
-    {
-      "id": "dHEC_yH",
-      "titulo_filme": "TESTE 90",
-      "data": "21/12/2023",
-      "horario": "20:10",
-      "autitorio": "5",
-      "imagem_tipo": "4d"
-    },
-    {
-      "id": "W_AcT5r",
-      "titulo_filme": "TESTE 20",
-      "data": "10/12/2023",
-      "horario": "17:00",
-      "autitorio": "Sala 7",
-      "imagem_tipo": "3d"
-    },
-    {
-      "id": "RLUiTlq",
-      "titulo_filme": "TETE",
-      "data": "10/11/2023",
-      "horario": "20:10",
-      "autitorio": "20:10",
-      "imagem_tipo": "4d"
-    },
-    {
-      "id": "I-HzAkE",
-      "titulo_filme": "testeX",
-      "data": "20/12/2023",
+      "id": 1,
+      "titulo_filme": "Adão Negro",
+      "data": "23/11/2023",
       "horario": "20:00",
-      "autitorio": "Sala X",
-      "imagem_tipo": "4d"
+      "auditorio": "Sala 4",
+      "imagem_tipo": "2D"
     },
     {
-      "id": "lZE9KFS",
-      "titulo_filme": "Teste X",
-      "data": "10/12/2023",
-      "horario": "14:20",
-      "auditorio": "SALA VIP",
-      "imagem_tipo": "4d"
+      "id": 2,
+      "titulo_filme": "Vingadores Endgame 2",
+      "data": "21/09/2024",
+      "horario": "20:00",
+      "auditorio": "Sala 3",
+      "imagem_tipo": "2D"
+    },
+    {
+      "id": 3,
+      "titulo_filme": "Creed III",
+      "data": "04/02/2024",
+      "horario": "19:00",
+      "auditorio": "Sala 1",
+      "imagem_tipo": "3D"
     }
   ]
 }

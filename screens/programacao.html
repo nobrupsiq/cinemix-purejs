@@ -68,27 +68,30 @@
 
       <input type="text" class="prog_id_add" style="display: none;">
 
-      <label for="prog_titulo">Filme</label>
-      <input id='prog_titulo' class="prog_titulo_add" type="text" placeholder="Nome do filme">
-
-      <label for="prog_data">Data</label>
-      <input id='prog_data' type="date" class="prog_data_add" placeholder="Data de estréia">
-
-      <label for="prog_horario">Horário</label>
-      <input id='prog_horario' type="text" class="prog_hora_add" placeholder="00:00">
-
-      <label for="prog_auditorio">Auditório</label>
-      <input id='prog_auditorio' type="text" class="prog_auditorio_add" placeholder="EX: Sala 1">
-
-      <label for="imagem">Tipo de imagem
-        <select id="imagem" class="prog_imagem_add">
+      <label for="filme_programacao">Filme
+        <select id="filme_programacao" class="filme_programacao_add">
           <option value="Selecione" selected disabled>Selecionar</option>
-          <option value="3d">3D</option>
-          <option value="4d">4D</option>
-          <option value="5d">5D</option>
         </select>
-      </label>
-      <button class="prog_add_btn">Adicionar</button>
+
+        <label for="prog_data">Data</label>
+        <input id='prog_data' type="text" class="prog_data_add" placeholder="Data de estréia">
+
+        <label for="prog_horario">Horário</label>
+        <input id='prog_horario' type="text" class="prog_hora_add" placeholder="00:00">
+
+        <label for="prog_auditorio">Auditório</label>
+        <input id='prog_auditorio' type="text" class="prog_auditorio_add" placeholder="EX: Sala 1">
+
+        <label for="imagem">Tipo de imagem
+          <select id="imagem" class="prog_imagem_add">
+            <option value="Selecione" selected disabled>Selecionar</option>
+            <option value="2d">2D</option>
+            <option value="3d">3D</option>
+            <option value="4d">4D</option>
+            <option value="5d">5D</option>
+          </select>
+        </label>
+        <button class="prog_add_btn">Adicionar</button>
     </form>
   </div>
 
@@ -98,27 +101,30 @@
     <form class="form_prog_edit">
       <span class="fechar_modal">X</span>
       <label for="edit_prog_select">Selecione a programação
-        <select id="edit_prog_select">
+        <select id="edit_prog_select" onchange="fillInput()">
           <option class="opt" value="Selecione" selected disabled aria-readonly="true">Selecionar</option>
-          <option class="opt" value="Adao negro">Adão negro | 13/10/2023 | 20:00 | Sala 5 | 3D</option>
+
         </select>
       </label>
 
+      <input type="text" class="prog_edit_id" style="display: none;">
+
       <label for="prog_titulo">Filme</label>
-      <input id='prog_titulo' type="text" placeholder="Nome do filme">
+      <input id='prog_titulo' type="text" class="edit_prog_nome" placeholder="Nome do filme">
 
       <label for="prog_data">Data</label>
-      <input id='prog_data' type="date" class="edit_prog_data" placeholder="Data de estréia">
+      <input id='prog_data' type="text" class="edit_prog_data" placeholder="Data de estréia">
 
       <label for="prog_horario">Horário</label>
-      <input id='prog_horario' type="text" placeholder="00:00">
+      <input id='prog_horario' type="text" class="edit_prog_horario" placeholder="00:00">
 
       <label for="prog_auditorio">Auditório</label>
-      <input id='prog_auditorio' type="text" placeholder="EX: Sala 1">
+      <input id='prog_auditorio' type="text" class="edit_prog_auditorio" placeholder="EX: Sala 1">
 
       <label for="imagem">Tipo de imagem
-        <select id="imagem">
+        <select id="imagem" class="edit_prog_imagem">
           <option value="selecionar" selected disabled>Selecionar</option>
+          <option value="2d">2D</option>
           <option value="3d">3D</option>
           <option value="4d">4D</option>
           <option value="5d">5D</option>
@@ -134,9 +140,10 @@
     <form class="form_prog_delet">
       <span class="fechar_modal">X</span>
       <label for="delet_prog_select">Selecione a programação
+        <input type="text" class="prog_delete_id" style="display: none;">
         <select id="delet_prog_select">
           <option class="opt" value="Selecione" aria-readonly="true" selected disabled>Selecionar</option>
-          <option class="opt" value="Adao negro">Adão negro | 13/10/2023 | 20:00 | Sala 5 | 3D</option>
+
         </select>
       </label>
       <button class="delet_btn">Deletar</button>

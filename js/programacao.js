@@ -1,3 +1,5 @@
+// --------------------------------------------- Funcionalidade MODAL -----------------------------------------
+
 function openComboModal() {
     const addBtn = document.querySelector('.addBtn');
     const editBtn = document.querySelector('.editBtn');
@@ -78,29 +80,159 @@ async function getProgramacao() {
 }
 getProgramacao();
 
-// PROGRAMAÇÃO ADD
-const url = 'http://localhost:3000/sessoes';
+// --------------------------------------------- Adicionar programacao -------------------------------------
 
+const url = 'http://localhost:3000/sessoes/'; // URL da API (endpoint: sessoes)
+
+//
+let sessoesList = []; // Resposta do meu Fetch abaixo será alocado no array;
+// Sendo assim não irei precisar refazer o fetch para o preenchimento de input
+// na função fillInput() --Funcionalidade de editar--
+async function getSessoes() {
+    const response = await fetch(url);
+    const sessoes = await response.json();
+    sessoesList = sessoes;
+}
+getSessoes();
+
+// Funcionalidade para adicionar
 const progBtnAdd = document.querySelector('.prog_add_btn');
 progBtnAdd.addEventListener('click', addProgramacao);
-
-// Adicionar programacao
 function addProgramacao() {
     const obj = {
         id: document.querySelector('.prog_id_add').value,
-        titulo_filme: document.querySelector('.prog_titulo_add').value,
-        data: document
-            .querySelector('.prog_data_add')
-            .value.split('-')
-            .reverse()
-            .join('/'),
+        titulo_filme: document.querySelector('.filme_programacao_add').value,
+        data: document.querySelector('.prog_data_add').value,
         horario: document.querySelector('.prog_hora_add').value,
         auditorio: document.querySelector('.prog_auditorio_add').value,
-        imagem_tipo: document.querySelector('.prog_imagem_add').value,
+        imagem_tipo: document
+            .querySelector('.prog_imagem_add')
+            .value.toUpperCase(),
     };
 
     fetch(url, {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    });
+}
+// Selecionar filmes para adicionar programação
+function selectFilmeAddProg() {
+    const selecionarProgramacao = document.querySelector(
+        '.filme_programacao_add',
+    );
+    fetch('http://localhost:3000/filmes')
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((filme) => titulos.push(filme.titulo));
+
+            titulos.forEach((titulo) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = titulo;
+                createOption.value = titulo;
+                selecionarProgramacao.appendChild(createOption);
+            });
+        });
+}
+selectFilmeAddProg();
+
+// ------------------------------------------------ EDITAR PROGRAMAÇÃO ------------------------------------
+
+// Selecionar filmes para editar programação
+function selectFilmeEditProg() {
+    const selecionarProgramacao = document.querySelector('#edit_prog_select');
+    fetch('http://localhost:3000/sessoes')
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((sessao) => titulos.push(sessao.titulo_filme));
+
+            titulos.forEach((sessao) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = sessao;
+                createOption.value = sessao;
+                selecionarProgramacao.appendChild(createOption);
+            });
+        });
+}
+selectFilmeEditProg();
+
+// Preenche as informações do filme selecionado para edição
+function fillInput() {
+    let x = sessoesList.find(
+        (e) =>
+            e.titulo_filme == document.querySelector('#edit_prog_select').value,
+    );
+    document.querySelector('.prog_edit_id').value = x.id;
+    document.querySelector('.edit_prog_nome').value = x.titulo_filme;
+    document.querySelector('.edit_prog_data').value = x.data;
+    document.querySelector('.edit_prog_horario').value = x.horario;
+    document.querySelector('.edit_prog_auditorio').value = x.auditorio;
+    document.querySelector('.edit_prog_imagem').value = x.imagem_tipo;
+}
+
+// Funcionalidade para editar
+const editBtn = document.querySelector('.edit_btn');
+editBtn.addEventListener('click', editarProgramacao);
+function editarProgramacao(e) {
+    e.preventDefault();
+    const obj = {
+        id: document.querySelector('.prog_edit_id').value,
+        titulo_filme: document.querySelector('.edit_prog_nome').value,
+        data: document.querySelector('.edit_prog_data').value,
+        horario: document.querySelector('.edit_prog_horario').value,
+        auditorio: document.querySelector('.edit_prog_auditorio').value,
+        imagem_tipo: document
+            .querySelector('.edit_prog_imagem')
+            .value.toUpperCase(),
+    };
+    fetch(url + obj.id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    });
+}
+
+// ------------------------------------------------ DELETAR PROGRAMAÇÃO --------------------------------------
+// Selecionar sessão para editar programação
+function selectFilmeDeleteProg() {
+    const selecionarProgramacao = document.querySelector('#delet_prog_select');
+    fetch('http://localhost:3000/sessoes')
+        .then((response) => response.json())
+        .then((json) => {
+            const titulos = [];
+            json.map((sessao) => titulos.push(sessao.titulo_filme));
+
+            titulos.forEach((sessao) => {
+                const createOption = document.createElement('option');
+                createOption.innerHTML = sessao;
+                createOption.value = sessao;
+                selecionarProgramacao.appendChild(createOption);
+            });
+        });
+}
+selectFilmeDeleteProg();
+
+// Funcionalidade para deletar uma programação
+const delBtn = document.querySelector('.delet_btn');
+delBtn.addEventListener('click', deletarProgramacao);
+function deletarProgramacao(e) {
+    e.preventDefault();
+    const obj = {
+        id: sessoesList.find(
+            (e) =>
+                e.titulo_filme ==
+                document.querySelector('#delet_prog_select').value,
+        ).id,
+    };
+
+    fetch(url + obj.id, {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
         },
