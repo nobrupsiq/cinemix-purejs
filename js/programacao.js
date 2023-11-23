@@ -171,7 +171,7 @@ function fillInput() {
     document.querySelector('.edit_prog_data').value = x.data;
     document.querySelector('.edit_prog_horario').value = x.horario;
     document.querySelector('.edit_prog_auditorio').value = x.auditorio;
-    document.querySelector('.edit_prog_imagem').value = 'teste';
+    document.querySelector('.edit_prog_imagem').value = x.imagem_tipo;
 }
 
 // Funcionalidade para editar
