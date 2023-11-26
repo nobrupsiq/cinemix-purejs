@@ -433,3 +433,23 @@
     scale: 1.1;
     box-shadow: 4px 4px 1px var(--f_color);
 }
+
+/* Mover para o topo */
+
+.moveTop {
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    margin: 20px;
+    transition: 0.5s;
+    animation: ani ease 1s alternate infinite;
+}
+
+@keyframes ani {
+    0% {
+        scale: 1.2;
+    }
+    100% {
+        scale: 0.6;
+    }
+}
