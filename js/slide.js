@@ -138,6 +138,13 @@ export class Slide {
         this.activeNextSlide = this.activeNextSlide.bind(this);
         this.onResize = debounce(this.onResize.bind(this), 200);
     }
+    automatic() {
+        let n = 1;
+        const total = document.querySelector('.slide').children.length;
+        setInterval(() => {
+            this.changeSlide(n++ % total);
+        }, 2000);
+    }
 
     init() {
         this.bindEvents();
@@ -146,6 +153,7 @@ export class Slide {
         this.slidesConfig();
         this.addResizeEvent();
         this.changeSlide(1);
+        this.automatic();
         return this;
     }
 }
