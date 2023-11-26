@@ -211,3 +211,23 @@ function comboDelete(e) {
         body: JSON.stringify(obj),
     });
 }
+
+// Scroll para o topo
+
+function scrollTop() {
+    if (window.scrollY >= 760) {
+        document.querySelector('.moveTop').classList.add('ativo');
+    }
+    if (window.scrollY < 760) {
+        document.querySelector('.moveTop').classList.remove('ativo');
+    }
+}
+
+window.addEventListener('scroll', scrollTop);
+
+function goTop() {
+    window.scrollTo(0, 0);
+}
+
+const moveTop = document.querySelector('.moveTop img');
+moveTop.addEventListener('click', goTop);
