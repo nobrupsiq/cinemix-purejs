@@ -24,3 +24,10 @@ function goTop() {
 
 const moveTop = document.querySelector('.moveTop img');
 moveTop.addEventListener('click', goTop);
+
+function bemVindo() {
+    let newsNome = document.querySelector('.newsletter_nome').value;
+    alert(`Olá, ${newsNome}! Seja bem vindo ao Cinemix 😁`);
+}
+const newsletterBtn = document.querySelector('.btn_news');
+newsletterBtn.addEventListener('click', bemVindo);

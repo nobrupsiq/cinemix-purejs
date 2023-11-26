@@ -147,6 +147,7 @@ function addFilme(e) {
         descricao: document.querySelector('#filme_descricao').value,
         genero: document.querySelector('#genero').value,
     };
+    alert('FILME ADICIONADO COM SUCESSO! ✔');
     fetch(url, {
         method: 'POST',
         headers: {
@@ -179,7 +180,7 @@ function editFilme(e) {
             document.querySelector('.edit_filme_trailer').value,
         ),
     };
-
+    alert('FILME ATUALIZADO COM SUCESSO! ✔');
     fetch(url + obj.id, {
         method: 'PUT',
         headers: {
@@ -249,13 +250,16 @@ function deletFilme(e) {
                 document.querySelector('#del_selecionar_filme').value,
         ).id,
     };
-    fetch(url + obj.id, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(obj),
-    });
+    if (confirm('TEM CERTEZA QUE DESEJA REMOVER O FILME? 😥')) {
+        alert('FILME REMOVIDO COM SUCESSO! ✔');
+        fetch(url + obj.id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(obj),
+        });
+    }
 }
 
 // FUNÇÃO PARA CONVERTER LINK DO TRAILER PARA EMBED

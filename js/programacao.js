@@ -109,7 +109,7 @@ function addProgramacao() {
             .querySelector('.prog_imagem_add')
             .value.toUpperCase(),
     };
-
+    alert('PROGRAMAÇÃO ADICIONADA COM SUCESSO! ✔');
     fetch(url, {
         method: 'POST',
         headers: {
@@ -189,6 +189,7 @@ function editarProgramacao(e) {
             .querySelector('.edit_prog_imagem')
             .value.toUpperCase(),
     };
+    alert('PROGRAMAÇÃO ATUALIZADA COM SUCESSO! ✔');
     fetch(url + obj.id, {
         method: 'PUT',
         headers: {
@@ -230,14 +231,16 @@ function deletarProgramacao(e) {
                 document.querySelector('#delet_prog_select').value,
         ).id,
     };
-
-    fetch(url + obj.id, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(obj),
-    });
+    if (confirm('TEM CERTEZA QUE DESEJA REMOVER A PROGRAMAÇÃO? 😥')) {
+        alert('PROGRAMAÇÃO REMOVIDA COM SUCESSO! ✔');
+        fetch(url + obj.id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(obj),
+        });
+    }
 }
 
 // Scroll para o topo

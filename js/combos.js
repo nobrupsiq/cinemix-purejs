@@ -96,7 +96,7 @@ function addCombo(e) {
         imagem: document.querySelector('.add_combo_banner').value,
         nome: document.querySelector('.add_combo_titulo').value,
     };
-
+    alert('COMBO ADICIONADO COM SUCESSO! ✔');
     fetch(url, {
         method: 'POST',
         headers: {
@@ -131,6 +131,7 @@ function comboEdit(e) {
         descricao: document.querySelector('.edit_combo_descricao').value,
     };
 
+    alert('COMBO ATUALIZADO COM SUCESSO! ✔');
     fetch(url + obj.id, {
         method: 'PUT',
         headers: {
@@ -202,14 +203,16 @@ function comboDelete(e) {
                 document.querySelector('#delete_selecionar_combo').value,
         ).id,
     };
-
-    fetch(url + obj.id, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(obj),
-    });
+    if (confirm('TEM CERTEZA QUE DESEJA REMOVER O COMBO? 😥')) {
+        alert('COMBO REMOVIDO COM SUCESSO! ✔');
+        fetch(url + obj.id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(obj),
+        });
+    }
 }
 
 // Scroll para o topo
