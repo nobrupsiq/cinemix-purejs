@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: rgba(236, 240, 241, 1);
+}
+
 :root {
     --bg: #6639da;
     --title: #61bafc;
