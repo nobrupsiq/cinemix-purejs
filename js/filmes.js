@@ -91,7 +91,7 @@ trailerModal();
 
 // FUNCIONALIDADE EXIBIR OS FILMES DA API
 
-const url = 'http://localhost:3000/filmes/';
+const url = 'https://cinemix-api.vercel.app/filmes/';
 let filmesList = [];
 async function getFilmes() {
     const response = await fetch(url);
@@ -133,6 +133,8 @@ function setMovie(link, desc) {
 }
 getFilmes();
 
+// ADICIONAR FILME
+
 const addBtn = document.querySelector('.add_btn');
 addBtn.addEventListener('click', addFilme);
 function addFilme(e) {
@@ -154,17 +156,10 @@ function addFilme(e) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(obj),
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Erro na resposta da API');
-            }
-        })
-        .then((data) => {
-            console.log('Resposta da API após adicionar filme: ', data);
-        })
-        .catch((error) => console.error('Erro ao adicionar filme', error));
+    }).then((e) => window.location.reload());
 }
+
+// EDITAR FILME
 
 const editBtn = document.querySelector('.edit_btn');
 editBtn.addEventListener('click', editFilme);
@@ -187,8 +182,10 @@ function editFilme(e) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(obj),
-    });
+    }).then((e) => window.location.reload());
 }
+
+// SELECIONAR FILME PELO TITULO E CRIAR OPTIONS NO SELECT
 
 function selectFilmeTargetEdit() {
     const selecionarFilme = document.querySelector('#edit_selecionar_filme');
@@ -208,6 +205,7 @@ function selectFilmeTargetEdit() {
 }
 selectFilmeTargetEdit();
 
+// AO SELECIONAR O FILME PARA EDIÇÃO, ESSA FUNÇÃO PREENCHE OS DADOS DO FILME SELECIONADO
 function fillInput() {
     let x = filmesList.find(
         (e) =>
@@ -220,6 +218,8 @@ function fillInput() {
     document.querySelector('.edit_filme_descricao').value = x.descricao;
     document.querySelector('.edit_genero').value = x.genero;
 }
+
+// DELETAR FILME
 
 function selectFilmeTargetDelete() {
     const selecionarFilme = document.querySelector('#del_selecionar_filme');
@@ -258,7 +258,7 @@ function deletFilme(e) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(obj),
-        });
+        }).then((e) => window.location.reload());
     }
 }
 
@@ -268,6 +268,8 @@ function convertLinkYoutube(url) {
     if (!embed) return url;
     return 'https://www.youtube.com/embed/' + embed[1];
 }
+
+// SCROLL PARA O TOPO
 
 function scrollTop() {
     if (window.scrollY >= 760) {
