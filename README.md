@@ -27,6 +27,8 @@
 
 <br>
 
+![App Screenshot](./.github/img/filmes_func.gif)
+
 ## Endpoints
 
 ```bash
@@ -40,6 +42,8 @@ https://cinemix-api.vercel.app/combos/
 ```bash
 https://cinemix-api.vercel.app/sessoes/
 ```
+
+![App Screenshot](./.github/img/cards_select.gif)
 
 <br>
 
@@ -97,14 +101,6 @@ Rode o Live server
 | White  | ![#ffffff](./.github/Colors/white.png) #ffffff  |
 
 ## Screenshots
-
-### Hover
-
-![App Screenshot](./.github/img/cards_select.gif)
-
-### Funcionalidade
-
-![App Screenshot](./.github/img/filmes_func.gif)
 
 <br>
 
