@@ -62,7 +62,7 @@ fecharModal();
 let combosList;
 
 async function getCombos() {
-    const url = ' http://localhost:3000/combos';
+    const url = 'https://cinemix-api.vercel.app/combos/';
     const response = await fetch(url);
     const combos = await response.json();
     combosList = combos;

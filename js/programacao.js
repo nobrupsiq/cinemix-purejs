@@ -61,7 +61,7 @@ function fecharModal() {
 fecharModal();
 
 async function getProgramacao() {
-    const url = 'http://localhost:3000/sessoes';
+    const url = 'https://cinemix-api.vercel.app/sessoes/';
     const response = await fetch(url);
     const programacao = await response.json();
 
@@ -82,7 +82,7 @@ getProgramacao();
 
 // --------------------------------------------- Adicionar programacao -------------------------------------
 
-const url = 'http://localhost:3000/sessoes/'; // URL da API (endpoint: sessoes)
+const url = 'https://cinemix-api.vercel.app/sessoes/'; // URL da API (endpoint: sessoes)
 
 //
 let sessoesList = []; // Resposta do meu Fetch abaixo será alocado no array;
@@ -116,7 +116,7 @@ function addProgramacao() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(obj),
-    });
+    }).then((e) => window.location.reload());
 }
 // Selecionar filmes para adicionar programação
 function selectFilmeAddProg() {
@@ -196,7 +196,7 @@ function editarProgramacao(e) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(obj),
-    });
+    }).then((e) => window.location.reload());
 }
 
 // ------------------------------------------------ DELETAR PROGRAMAÇÃO --------------------------------------
@@ -239,7 +239,7 @@ function deletarProgramacao(e) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(obj),
-        });
+        }).then((e) => window.location.reload());
     }
 }
 
