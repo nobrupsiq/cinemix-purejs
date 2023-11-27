@@ -60,19 +60,13 @@ https://cinemix-api.vercel.app/sessoes/
 Clone o projeto
 
 ```bash
-  git clone https://github.com/nobrupsiq/cinemix-purejs
+git clone https://github.com/nobrupsiq/cinemix-purejs
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd cinemix-purejs
-```
-
-Instale as dependências
-
-```bash
-npm install
+cd cinemix-purejs
 ```
 
 Inicie o servidor
