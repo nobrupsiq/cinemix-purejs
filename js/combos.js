@@ -87,7 +87,7 @@ getCombos();
 
 // ADD COMBO
 
-const url = 'http://localhost:3000/combos/';
+const url = 'https://cinemix-api.vercel.app/combos/';
 function addCombo(e) {
     e.preventDefault();
     const obj = {
@@ -103,16 +103,7 @@ function addCombo(e) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(obj),
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Erro na resposta da API');
-            }
-        })
-        .then((data) => {
-            console.log('Resposta da API após adicionar combo: ', data);
-        })
-        .catch((error) => console.error('Erro ao combo filme', error));
+    }).then((e) => window.location.reload());
     getCombos();
 }
 const addComboBtn = document.querySelector('.add_btn');
@@ -138,7 +129,7 @@ function comboEdit(e) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(obj),
-    });
+    }).then((e) => window.location.reload());
     getCombos();
 }
 
@@ -211,7 +202,7 @@ function comboDelete(e) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(obj),
-        });
+        }).then((e) => window.location.reload());
     }
 }
 
