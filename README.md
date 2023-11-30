@@ -102,8 +102,6 @@ Rode o Live server
 | Black  | ![#000000](./.github/Colors/black.png) #000000  |
 | White  | ![#ffffff](./.github/Colors/white.png) #ffffff  |
 
-## Screenshots
-
 <br>
 
 ## Feedback
