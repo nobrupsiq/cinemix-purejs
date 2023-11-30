@@ -6,6 +6,8 @@
 
 <br>
 
+## Projeto criado para estudos (CRUD, API), totalmente do zero, do figma ao código! 🔥
+
 #### Cinemix se baseia em uma plataforma de cinema que simula o lado do administrador onde o mesmo poderá realizar os métodos:
 
 -   GET = <i>Listar</i>
