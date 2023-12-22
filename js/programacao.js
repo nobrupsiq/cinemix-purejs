@@ -123,7 +123,7 @@ function selectFilmeAddProg() {
     const selecionarProgramacao = document.querySelector(
         '.filme_programacao_add',
     );
-    fetch('http://localhost:3000/filmes')
+    fetch('https://cinemix-api.vercel.app/filmes/')
         .then((response) => response.json())
         .then((json) => {
             const titulos = [];
@@ -144,7 +144,7 @@ selectFilmeAddProg();
 // Selecionar filmes para editar programação
 function selectFilmeEditProg() {
     const selecionarProgramacao = document.querySelector('#edit_prog_select');
-    fetch('http://localhost:3000/sessoes')
+    fetch('https://cinemix-api.vercel.app/sessoes/')
         .then((response) => response.json())
         .then((json) => {
             const titulos = [];
@@ -203,7 +203,7 @@ function editarProgramacao(e) {
 // Selecionar sessão para editar programação
 function selectFilmeDeleteProg() {
     const selecionarProgramacao = document.querySelector('#delet_prog_select');
-    fetch('http://localhost:3000/sessoes')
+    fetch('https://cinemix-api.vercel.app/sessoes/')
         .then((response) => response.json())
         .then((json) => {
             const titulos = [];
