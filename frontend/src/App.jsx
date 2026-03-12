@@ -3,7 +3,7 @@ import react from "react";
 function App() {
   return (
     <>
-      <h1>Cinemix 2.0</h1>
+      <h1 className="text-3xl">Cinemix 2.0</h1>
     </>
   );
 }
