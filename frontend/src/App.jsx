@@ -1,9 +1,10 @@
 import react from "react";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl">Cinemix 2.0</h1>
+      <Home />
     </>
   );
 }

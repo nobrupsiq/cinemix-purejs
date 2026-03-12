@@ -1,1 +1,39 @@
+@config "../tailwind.config.js";
 @import "tailwindcss";
+
+/* body {
+  font-family: "Bebas Neue", sans-serif;
+} */
+
+:root {
+  /* ── Roxos ── */
+  --dark-bg: #0d0519;
+  --purple-deep: #1a0a2e;
+  --purple-mid: #2d1254;
+  --purple-vivid: #6b21a8;
+  --purple-light: #9333ea;
+
+  /* ── Mostarda ── */
+  --mustard: #d4a017;
+  --mustard-light: #f0c040;
+  --mustard-pale: #fef3c7;
+
+  /* ── Neutros ── */
+  --white: #f8f4ff;
+  --gray: #a89bc2;
+  --gray-dark: #5a4e72;
+
+  /* ── Semânticas ── */
+  --green: #22c55e;
+  --red: #dc2626;
+
+  /* ── Layout ── */
+  --sidebar-w: 260px;
+  --nav-h: 72px;
+  --radius: 2px;
+  --radius-lg: 4px;
+
+  /* ── Fonts ── */
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
