@@ -1,41 +1,63 @@
 @config "../tailwind.config.js";
 @import "tailwindcss";
 
-/* body {
-  font-family: "Bebas Neue", sans-serif;
-} */
-
 :root {
-  /* ── Roxos ── */
-  --dark-bg: #0d0519;
-  --purple-deep: #1a0a2e;
-  --purple-mid: #2d1254;
-  --purple-vivid: #6b21a8;
-  --purple-light: #9333ea;
+  /* ── Roxos ──────────────────────────────── */
+  --c-bg: #0d0519; /* page background */
+  --c-deep: #1a0a2e; /* cards, sections */
+  --c-mid: #2d1254; /* sidebar, modals, elevated */
+  --c-vivid: #6b21a8; /* badges 3D, accents */
+  --c-light: #9333ea; /* hover states vivid */
 
-  /* ── Mostarda ── */
-  --mustard: #d4a017;
-  --mustard-light: #f0c040;
-  --mustard-pale: #fef3c7;
+  /* ── Mostarda ───────────────────────────── */
+  --c-mu: #d4a017; /* ACCENT PRIMÁRIO — use com parcimônia */
+  --c-mul: #f0c040; /* hover do btn-primary */
+  --c-mup: #fef3c7; /* pale para backgrounds */
 
-  /* ── Neutros ── */
-  --white: #f8f4ff;
-  --gray: #a89bc2;
-  --gray-dark: #5a4e72;
+  /* ── Neutros ─── */
+  --c-wh: #f8f4ff; /* texto primário */
+  --c-gr: #a89bc2; /* texto secundário */
+  --c-gd: #5a4e72; /* muted / labels */
 
   /* ── Semânticas ── */
-  --green: #22c55e;
-  --red: #dc2626;
+  --c-green: #22c55e; /* success, disponível */
+  --c-red: #dc2626; /* danger, esgotado */
+  --c-blue: #60a5fa; /* info */
 
-  /* ── Layout ── */
-  --sidebar-w: 260px;
-  --nav-h: 72px;
-  --radius: 2px;
-  --radius-lg: 4px;
+  /* ── Tipografia ── */
+  --f-d: "Bebas Neue", sans-serif; /* display */
+  --f-b: "DM Sans", sans-serif; /* body */
+  --f-m: "JetBrains Mono", monospace; /* code/specs */
 
-  /* ── Fonts ── */
-  --font-display: "Bebas Neue", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  /* ── Espaçamento (escala 4px) ── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ── Border-radius ── */
+  --r: 2px; /* sharp — padrão do sistema */
+  --r2: 4px; /* modals, preview containers */
+  --rf: 999px; /* pills, badges arredondados */
+
+  /* ── Motion ─────────────────────────────── */
+  --dur: 250ms;
+  --dur-f: 150ms; /* hover, micro */
+  --dur-s: 400ms; /* modals, page transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1); /* material ease */
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Layout ─────────────────────────────── */
+  --sw: 260px; /* sidebar width */
+  --nav-h: 72px; /* topbar height */
+  --px: clamp(24px, 5vw, 60px); /* page padding */
 }
 
 @layer base {
@@ -64,5 +86,88 @@
 
   .link-underline:hover::after {
     @apply scale-x-100 after:duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative overflow-hidden cursor-pointer uppercase font-bold tracking-[2px] text-[12px] border-none;
+
+    background: var(--c-mu);
+    color: var(--c-deep);
+    padding: 13px 28px;
+    border-radius: var(--r);
+    font-family: var(--f-b);
+  }
+
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--c-mul);
+    transform: translateX(-105%);
+    transition: transform var(--dur) var(--ease);
+    z-index: 0; /* Fica atrás do texto */
+  }
+
+  .btn-primary:hover::before {
+    transform: translateX(0);
+  }
+
+  .btn-primary > span {
+    position: relative;
+    z-index: 10; /* Fica acima da animação */
+  }
+}
+
+@layer components {
+  .btn-secondary {
+    @apply relative overflow-hidden cursor-pointer uppercase font-bold tracking-[2px] text-[12px];
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 13px 28px;
+    border-radius: var(--r);
+    font-family: var(--f-b);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-secondary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-105%);
+    transition: transform var(--dur) var(--ease);
+    z-index: 0; /* Fica atrás do texto */
+  }
+
+  .btn-secondary:hover::before {
+    transform: translateX(0);
+  }
+  .btn-secondary > span {
+    position: relative;
+    z-index: 10; /* Fica acima da animação */
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 4px var(--c-gr);
+    color: transparent;
+  }
+}
+
+@layer components {
+  .badge-now {
+    @apply inline-block uppercase text-[11px] tracking-[2px] font-bold;
+
+    padding: 4px 16px;
+    color: var(--c-mu);
+    border: 1px solid var(--c-mu);
+    background: rgba(255, 184, 0, 0.08);
+    border-radius: var(--r);
+    margin-bottom: 20px;
+    cursor: pointer;
   }
 }
