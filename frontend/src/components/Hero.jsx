@@ -8,7 +8,7 @@ const Hero = () => {
       style={{ backgroundImage: `url(${bgHome})` }}
     >
       <HeaderMenu />
-      <div className="p-page relative ">
+      <div className="p-page relative container mx-auto">
         <span className="badge-now">• Em cartaz agora</span>
 
         {/* GLOW */}
