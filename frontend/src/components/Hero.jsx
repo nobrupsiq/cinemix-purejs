@@ -1,13 +1,10 @@
-import bgHome from "../img/bg-home.png";
 import HeaderMenu from "./HeaderMenu";
 import Ticker from "./Ticker";
+
 const Hero = () => {
   return (
     <>
-      <section
-        className="min-h-screen relative flex flex-col justify-center bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: `url(${bgHome})` }}
-      >
+      <section className="min-h-screen relative flex flex-col justify-center bg-cover bg-center overflow-hidden">
         <HeaderMenu />
 
         <div className="p-page relative container mx-auto ">
