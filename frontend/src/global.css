@@ -148,23 +148,10 @@ body {
     font-family: var(--f-b);
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
-
-  .btn-secondary::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-105%);
-    transition: transform var(--dur) var(--ease);
-    z-index: 0; /* Fica atrás do texto */
-  }
-
-  .btn-secondary:hover::before {
-    transform: translateX(0);
-  }
-  .btn-secondary > span {
-    position: relative;
-    z-index: 10; /* Fica acima da animação */
+  .btn-secondary:hover {
+    border-color: var(--bg-mu);
+    color: var(--c-mu);
+    transition: ease var(--dur);
   }
 }
 

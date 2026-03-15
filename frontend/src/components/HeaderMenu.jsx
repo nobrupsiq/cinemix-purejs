@@ -9,16 +9,16 @@ const HeaderMenu = () => {
         </div>
         <nav className="font-body text-xs font-bold text-gr">
           <ul className="flex gap-10 uppercase items-center">
-            <li className="link-underline after:duration-300 pt-2">
+            <li className="link-underline after:duration-300 pt-2 hover:text-white">
               <a href="">Início</a>
             </li>
-            <li className="link-underline after:duration-300 pt-2">
+            <li className="link-underline after:duration-300 pt-2 hover:text-white">
               <a href="">Filmes</a>
             </li>
-            <li className="link-underline after:duration-300 pt-2">
+            <li className="link-underline after:duration-300 pt-2 hover:text-white">
               <a href="">Combos</a>
             </li>
-            <li className="link-underline after:duration-300 pt-2">
+            <li className="link-underline after:duration-300 pt-2 hover:text-white">
               <a href="">Programação</a>
             </li>
             <li>

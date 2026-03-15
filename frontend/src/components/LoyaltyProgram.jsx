@@ -5,7 +5,7 @@ const Loyaltyprogram = () => {
     <section className="container mx-auto p-page grid grid-cols-[minmax(0,1fr)_480px] gap-12 items-center mt-20">
       <div>
         <span className="badge-now">Programa fidelidade</span>
-        <h2 className="uppercase text-white font-display text-6xl tracking-[2px] mb-4">
+        <h2 className="uppercase text-white font-display text-8xl tracking-[2px] mb-4">
           Clube da <br />
           <span className="text-mu">pipoca</span>
         </h2>
@@ -61,7 +61,7 @@ const Loyaltyprogram = () => {
         </div>
       </div>
 
-      <aside className="bg-mid p-page rounded-2xl border border-mu/50 text-white w-full max-w-[480px] relative">
+      <aside className="bg-mid p-page rounded-2xl border border-mu/50 text-white w-full max-w-120 relative">
         <div className="absolute -top-6 -right-6 bg-mu w-20 h-20 rounded-full flex flex-col items-center justify-center text-black uppercase shadow-[0_0_20px_rgba(212,160,23,0.3)] rotate-6 scale-110">
           <span className="font-display text-[18px]">+2x</span>
           <span className="font-body text-sm font-bold text-[10px]">
