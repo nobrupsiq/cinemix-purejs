@@ -4,7 +4,7 @@ export default function Ticker() {
   return (
     <div className="absolute bottom-0 left-0 w-full bg-mu py-3 text-black font-display tracking-[2px] mb-4 ">
       <div
-        className="container mx-auto [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]
+        className="container mx-auto mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]
 [-webkit-mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
       >
         <Marquee

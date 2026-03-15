@@ -5,7 +5,7 @@ import React from "react";
 const UpcomingCard = () => {
   return (
     <div
-      className={`flex flex-col h-140 w-full rounded-sm2 p-page flex-2 hover:flex-5 transition-fast duration-400 justify-end
+      className={`flex flex-col h-140 rounded-sm2 p-page flex-2 hover:flex-5 transition-fast duration-400 justify-end overflow-hidden
       `}
       style={{
         background: `

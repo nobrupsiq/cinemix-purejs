@@ -1,6 +1,5 @@
 import HeaderMenu from "./HeaderMenu";
 import Ticker from "./Ticker";
-
 const Hero = () => {
   return (
     <>

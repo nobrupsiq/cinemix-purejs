@@ -3,7 +3,7 @@ import UpcomingCard from "./UpcomingCard";
 
 const UpcomingMovies = () => {
   return (
-    <section className="container mx-auto p-page mt-12">
+    <section className="container mx-auto p-page mt-24">
       <div className="flex justify-between items-center gap-6">
         <div>
           <p className="text-mu uppercase tracking-[2px] font-body text-sm">

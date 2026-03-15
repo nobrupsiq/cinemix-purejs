@@ -6,7 +6,8 @@ export default {
       colors: {
         /* ── Roxos ──────────────────────────────── */
         bg: "#0d0519" /* page background */,
-        deep: "#1a0a2e" /* cards, sections */,
+        deep: "#220e3a" /* cards, sections */,
+        deepb: "#1f0d35",
         mid: "#2d1254" /* sidebar, modals, elevated */,
         vivid: "#6b21a8" /* badges 3D, accents */,
         light: "#9333ea" /* hover states vivid */,

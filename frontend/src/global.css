@@ -1,10 +1,27 @@
 @config "../tailwind.config.js";
 @import "tailwindcss";
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  /* background-color: #0d0519; */
+  background-image: url("/src/img/bg-home.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 :root {
   /* ── Roxos ──────────────────────────────── */
   --c-bg: #0d0519; /* page background */
-  --c-deep: #1a0a2e; /* cards, sections */
+  --c-deep: #220e3a; /* cards, sections */
+  --c-deepb: #1f0d35; /* sidebar, modals, elevated */
   --c-mid: #2d1254; /* sidebar, modals, elevated */
   --c-vivid: #6b21a8; /* badges 3D, accents */
   --c-light: #9333ea; /* hover states vivid */
