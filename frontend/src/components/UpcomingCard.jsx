@@ -5,7 +5,7 @@ import React from "react";
 const UpcomingCard = () => {
   return (
     <div
-      className={`flex flex-col h-140 rounded-sm2 p-page flex-2 hover:flex-5 transition-fast duration-400 justify-end overflow-hidden
+      className={`flex flex-col h-140 rounded-sm2 p-page flex-2 hover:flex-5 transition-fast duration-400 justify-end overflow-hidden group
       `}
       style={{
         background: `
@@ -20,6 +20,16 @@ const UpcomingCard = () => {
       <h2 className="text-white font-display tracking-[2px] text-[44px]">
         The marvels
       </h2>
+
+      <div className="transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+        <p className="text-mu text-[12px] font-body tracking-[2px] pb-2">
+          ★ 7.2 <span className="text-white ml-2">2h 12min</span>
+        </p>
+
+        <h2 className="text-mu font-display tracking-[3px] text-[14px] flex items-center gap-2">
+          <span>▶</span> Comprar ingresso
+        </h2>
+      </div>
     </div>
   );
 };
