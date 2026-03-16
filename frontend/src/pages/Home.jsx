@@ -4,6 +4,7 @@ import UpcomingMovies from "../components/UpcomingMovies";
 import ScheduleTheDay from "../components/ScheduleTheDay";
 import Loyaltyprogram from "../components/Loyaltyprogram";
 import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ScheduleTheDay />
       <Loyaltyprogram />
       <Newsletter />
+      <Footer />
     </div>
   );
 };
