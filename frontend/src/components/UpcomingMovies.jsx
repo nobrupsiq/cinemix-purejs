@@ -13,7 +13,7 @@ const UpcomingMovies = () => {
             Em breve nos cinemas
           </h1>
         </div>
-        <div className="flex-1 h-px bg-linear-to-r from-mu to-transparent blue-[0.3px]" />
+        <div className="flex-1 h-px bg-linear-to-r from-mu to-transparent blur-[0.3px]" />
         <p>
           <a
             href=""
