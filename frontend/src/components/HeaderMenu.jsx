@@ -1,6 +1,6 @@
 const HeaderMenu = () => {
   return (
-    <div className="absolute top-0 left-0 w-full z-50">
+    <div className="fixed top-0 left-0 w-full z-50 backdrop-blur">
       <div className="flex items-center justify-between p-page tracking-[2px] container mx-auto">
         <div>
           <h1 className="text-4xl uppercase font-display text-white">
